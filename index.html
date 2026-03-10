@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constroleum · Arquitectura & Construcción en Budapest</title>
+  <meta name="description" content="Especialistas en arquitectura mediterránea y gestión de obra para inversores y propietarios españoles en Budapest, Hungría.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLanguage('es')" id="btn-es">ES</button>
+  <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+  <button class="lang-btn" onclick="setLanguage('hu')" id="btn-hu">HU</button>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="logo">
+    <img src="assets/images/Logo Main.png" alt="Constroleum">
+  </div>
+  <ul>
+    <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+    <li><a href="#filosofia" data-i18n="nav_philosophy">Filosofía</a></li>
+    <li><a href="#budapest" data-i18n="nav_budapest">Budapest</a></li>
+    <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="nav-contact" data-i18n="nav_cta">Consulta gratuita</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-location">Budapest · Hungría · 47°N 19°E</div>
+  <div class="hero-content">
+    <div class="hero-tag" data-i18n="hero_tag">Arquitectura &amp; Construcción · Budapest</div>
+    <h1>
+      <span data-i18n="hero_h1_1">Construye tu</span><br>
+      <span data-i18n="hero_h1_2">futuro en</span> <em data-i18n="hero_h1_em">Budapest</em>
+    </h1>
+    <p class="hero-desc" data-i18n="hero_desc">
+      Especialistas en arquitectura mediterránea y gestión de obra para inversores y propietarios españoles en Hungría.
+      Tu proyecto en Budapest, con la confianza de quienes conocen ambos mundos.
+    </p>
+    <div class="hero-cta">
+      <a href="#contacto" class="btn-primary" data-i18n="hero_btn1">Hablar con nosotros</a>
+      <a href="#servicios" class="btn-secondary" data-i18n="hero_btn2">Nuestros servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-number" data-i18n="stat1_num">Budapest</div>
+    <div class="stat-label" data-i18n="stat1_label">Base de operaciones · Hungría</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">100%</div>
+    <div class="stat-label" data-i18n="stat2_label">Servicio en español</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">360°</div>
+    <div class="stat-label" data-i18n="stat3_label">Gestión integral de proyecto</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="services-intro">
+    <div>
+      <div class="section-tag" data-i18n="services_tag">Lo que hacemos</div>
+      <h2>
+        <span data-i18n="services_h2_1">Servicios integrales</span><br>
+        <span data-i18n="services_h2_2">de arquitectura</span><br>
+        <span data-i18n="services_h2_3">y construcción</span>
+      </h2>
+    </div>
+    <p class="services-desc" data-i18n="services_intro_p">
+      Desde la primera visita hasta la entrega de llaves, gestionamos cada etapa de tu proyecto
+      en Budapest. Trabajamos especialmente con clientes españoles e inversores extranjeros que
+      quieren renovar, construir o invertir en el mercado inmobiliario húngaro.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-number">01</div>
+      <div class="service-title" data-i18n="s1_title">Arquitectura mediterránea</div>
+      <p class="service-desc" data-i18n="s1_desc">Diseño que fusiona el carácter mediterráneo con los espacios y normativas de Budapest. Proyectos residenciales y comerciales con identidad propia.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-number">02</div>
+      <div class="service-title" data-i18n="s2_title">Gestión de obra</div>
+      <p class="service-desc" data-i18n="s2_desc">Dirección y coordinación completa de tu obra en Budapest. Controlamos plazos, calidad y presupuesto para que tú no tengas que preocuparte por nada.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-number">03</div>
+      <div class="service-title" data-i18n="s3_title">Reformas integrales</div>
+      <p class="service-desc" data-i18n="s3_desc">Transformamos pisos, locales y edificios con criterio estético y funcional. Materiales premium y acabados que duran décadas en el exigente clima húngaro.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-number">04</div>
+      <div class="service-title" data-i18n="s4_title">Consultoría de inversión</div>
+      <p class="service-desc" data-i18n="s4_desc">Asesoramiento para invertir en inmuebles en Budapest. Te ayudamos a identificar oportunidades, gestionar permisos y maximizar la rentabilidad de tu inversión.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-number">05</div>
+      <div class="service-title" data-i18n="s5_title">Project Management</div>
+      <p class="service-desc" data-i18n="s5_desc">Gestión 360° de proyectos complejos: desde el estudio de viabilidad hasta la entrega final. Un interlocutor único para todo tu proyecto en Hungría.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-number">06</div>
+      <div class="service-title" data-i18n="s6_title">Interiorismo &amp; diseño</div>
+      <p class="service-desc" data-i18n="s6_desc">Diseño de interiores adaptado a cada cliente: desde pisos de alquiler optimizados hasta residencias de alto nivel en el corazón de Budapest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="filosofia">
+  <div class="philosophy-inner">
+    <div class="philosophy-left">
+      <div class="section-tag" data-i18n="phil_tag">Nuestra filosofía</div>
+      <h2>
+        <span data-i18n="phil_h2_1">Espacios que</span><br>
+        <em data-i18n="phil_h2_em">perduran</em>
+      </h2>
+      <p class="philosophy-lead" data-i18n="phil_lead">
+        Cada proyecto que firmamos es el reflejo de una manera de entender la arquitectura: disciplinada, honesta y orientada a la excelencia. No construimos para el corto plazo.
+      </p>
+    </div>
+    <div class="philosophy-pillars">
+      <div class="pillar">
+        <div class="pillar-icon">◈</div>
+        <div class="pillar-title" data-i18n="pillar1_title">Rigor técnico</div>
+        <p class="pillar-text" data-i18n="pillar1_text">Cada detalle constructivo se estudia, calcula y supervisa. La precisión técnica es la base de cualquier obra que resiste el paso del tiempo.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◈</div>
+        <div class="pillar-title" data-i18n="pillar2_title">Excelencia</div>
+        <p class="pillar-text" data-i18n="pillar2_text">No hay obra pequeña. El nivel de exigencia que aplicamos a una reforma de vivienda es el mismo que a un proyecto de gran envergadura.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◈</div>
+        <div class="pillar-title" data-i18n="pillar3_title">Confianza</div>
+        <p class="pillar-text" data-i18n="pillar3_text">Trabajamos en español, con transparencia y sin sorpresas. Eres partícipe activo de tu proyecto, no un espectador.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◈</div>
+        <div class="pillar-title" data-i18n="pillar4_title">Permanencia</div>
+        <p class="pillar-text" data-i18n="pillar4_text">Diseñamos espacios que permanecen. Materiales de calidad, soluciones probadas y una visión a largo plazo que protege tu inversión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <div class="gallery-item gallery-item--tall">
+    <img src="assets/images/Referencia Ultramarinos.JPG" alt="Gourmet Boutique Ultramarinos Martinez">
+    <span class="gallery-caption">Ultramarinos Martínez · Reforma integral local comercial</span>
+  </div>
+  <div class="gallery-item">
+    <img src="assets/images/Referencia Kozmo.jpg" alt="Kozmo Hotel Habitación">
+    <span class="gallery-caption">Reforma Kozmo Hotel · Jefatura de obra</span>
+  </div>
+  <div class="gallery-item">
+    <img src="assets/images/Referencia Savoy.jpg" alt="Savoy Hotel Recepción">
+    <span class="gallery-caption">Reforma Savoy Hotel · Jefatura de obra</span>
+  </div>
+
+</div>
+
+<!-- WHY BUDAPEST -->
+<section class="budapest" id="budapest">
+  <div class="budapest-inner">
+    <div class="budapest-visual">
+      <img src="assets/images/Budapest.JPG" alt="Budapest vista panorámica">
+      <div class="budapest-coords">47°29'N · 19°02'E</div>
+    </div>
+    <div>
+      <div class="section-tag" data-i18n="budapest_tag">Por qué Budapest</div>
+      <h2>
+        <span data-i18n="budapest_h2_1">El destino europeo</span><br>
+        <span data-i18n="budapest_h2_2">de inversión más</span><br>
+        <span data-i18n="budapest_h2_3">interesante</span>
+      </h2>
+      <ul class="budapest-points">
+        <li>
+          <span class="point-num">01</span>
+          <div class="point-text">
+            <strong data-i18n="bp1_title">Mercado inmobiliario dinámico</strong>
+            <p data-i18n="bp1_text">Budapest ofrece precios competitivos dentro de la UE con una rentabilidad por alquiler superior a la media europea.</p>
+          </div>
+        </li>
+        <li>
+          <span class="point-num">02</span>
+          <div class="point-text">
+            <strong data-i18n="bp2_title">Dentro de la Unión Europea</strong>
+            <p data-i18n="bp2_text">Seguridad jurídica europea con costes de construcción y reforma significativamente menores que en España o Europa occidental.</p>
+          </div>
+        </li>
+        <li>
+          <span class="point-num">03</span>
+          <div class="point-text">
+            <strong data-i18n="bp3_title">Servicio sin barreras</strong>
+            <p data-i18n="bp3_text">Con Constroleum, todo el proceso se gestiona en español. Sin sorpresas, sin idioma, sin complicaciones locales.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="section-tag" data-i18n="contact_tag">Hablemos</div>
+  <h2 style="margin-bottom: 3rem;">
+    <span data-i18n="contact_h2_1">Tu proyecto en Budapest</span><br>
+    <span data-i18n="contact_h2_2">empieza aquí</span>
+  </h2>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="contact_label_phone">Teléfono &amp; WhatsApp</span>
+        <a href="tel:+36308690578" class="contact-value">+36 30 869 05 78</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="contact_label_email">Email</span>
+        <a href="mailto:constroleum@gmail.com" class="contact-value">constroleum@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="contact_label_address">Dirección</span>
+        <span class="contact-value">Búza utca 2<br>1033 Budapest, Hungría</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="contact_label_follow">Síguenos</span>
+        <div class="contact-social">
+          <a href="https://instagram.com/constroleum" target="_blank" class="social-link">Instagram</a>
+          <a href="https://facebook.com/constroleum" target="_blank" class="social-link">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label data-i18n="form_name">Nombre</label>
+        <input type="text" data-i18n="form_name_ph" placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_email_label">Email</label>
+        <input type="email" data-i18n="form_email_ph" placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_service">Servicio de interés</label>
+        <select id="service-select">
+          <option value="">Selecciona un servicio</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_message">Cuéntanos tu proyecto</label>
+        <textarea data-i18n="form_message_ph" placeholder="Describe brevemente tu proyecto o consulta..."></textarea>
+      </div>
+      <button class="btn-primary" onclick="sendForm()" data-i18n="form_send" style="align-self:flex-start; cursor:pointer; border:none;">Enviar consulta</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="assets/images/Logo Main.png" alt="Constroleum">
+  </div>
+  <span class="footer-copy" data-i18n="footer_copy">© 2025 Constroleum · Todos los derechos reservados</span>
+  <div class="footer-address">
+    Búza utca 2 · 1033 Budapest, Hungría<br>
+    <a href="tel:+36308690578" style="color:inherit; text-decoration:none;">+36 30 869 05 78</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
