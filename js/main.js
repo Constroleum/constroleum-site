@@ -1,446 +1,594 @@
-/* ===========================
-   CONSTROLEUM — MAIN SCRIPTS
-   =========================== */
+/* ================================================
+   CONSTROLEUM — main.js
+   Generálkivitelező Budapest | constroleum.hu
+   ================================================ */
 
-// ===========================
-// TRANSLATIONS (i18n)
-// ===========================
+// ================================================
+// TRANSLATIONS
+// ================================================
 const TRANSLATIONS = {
-  es: {
-    nav_services: "Servicios",
-    nav_philosophy: "Filosofía",
-    nav_budapest: "Budapest",
-    nav_contact: "Contacto",
-    nav_cta: "Consulta gratuita",
 
-    hero_tag: "Arquitectura & Construcción · Budapest",
-    hero_h1_1: "Construye tu",
-    hero_h1_2: "futuro en",
-    hero_h1_em: "Budapest",
-    hero_desc: "Especialistas en arquitectura mediterránea y gestión de obra para inversores y propietarios españoles en Hungría. Tu proyecto en Budapest, con la confianza de quienes conocen ambos mundos.",
-    hero_btn1: "Hablar con nosotros",
-    hero_btn2: "Nuestros servicios",
-
-    stat1_num: "Budapest",
-    stat1_label: "Base de operaciones · Hungría",
-    stat2_label: "Servicio en español",
-    stat3_label: "Gestión integral de proyecto",
-
-    services_tag: "Lo que hacemos",
-    services_h2_1: "Servicios integrales",
-    services_h2_2: "de arquitectura",
-    services_h2_3: "y construcción",
-    services_intro_p: "Desde la primera visita hasta la entrega de llaves, gestionamos cada etapa de tu proyecto en Budapest. Trabajamos especialmente con clientes españoles e inversores extranjeros que quieren renovar, construir o invertir en el mercado inmobiliario húngaro.",
-
-    s1_title: "Arquitectura mediterránea",
-    s1_desc: "Diseño que fusiona el carácter mediterráneo con los espacios y normativas de Budapest. Proyectos residenciales y comerciales con identidad propia.",
-    s2_title: "Gestión de obra",
-    s2_desc: "Dirección y coordinación completa de tu obra en Budapest. Controlamos plazos, calidad y presupuesto para que tú no tengas que preocuparte por nada.",
-    s3_title: "Reformas integrales",
-    s3_desc: "Transformamos pisos, locales y edificios con criterio estético y funcional. Materiales premium y acabados que duran décadas en el exigente clima húngaro.",
-    s4_title: "Consultoría de inversión",
-    s4_desc: "Asesoramiento para invertir en inmuebles en Budapest. Te ayudamos a identificar oportunidades, gestionar permisos y maximizar la rentabilidad de tu inversión.",
-    s5_title: "Project Management",
-    s5_desc: "Gestión 360° de proyectos complejos: desde el estudio de viabilidad hasta la entrega final. Un interlocutor único para todo tu proyecto en Hungría.",
-    s6_title: "Interiorismo & diseño",
-    s6_desc: "Diseño de interiores adaptado a cada cliente: desde pisos de alquiler optimizados hasta residencias de alto nivel en el corazón de Budapest.",
-
-    // Philosophy section
-    phil_tag: "Nuestra filosofía",
-    phil_h2_1: "Espacios que",
-    phil_h2_em: "perduran",
-    phil_lead: "Cada proyecto que firmamos es el reflejo de una manera de entender la arquitectura: disciplinada, honesta y orientada a la excelencia. No construimos para el corto plazo.",
-    pillar1_title: "Rigor técnico",
-    pillar1_text: "Cada detalle constructivo se estudia, calcula y supervisa. La precisión técnica es la base de cualquier obra que resiste el paso del tiempo.",
-    pillar2_title: "Excelencia",
-    pillar2_text: "No hay obra pequeña. El nivel de exigencia que aplicamos a una reforma de vivienda es el mismo que a un proyecto de gran envergadura.",
-    pillar3_title: "Confianza",
-    pillar3_text: "Trabajamos en español, con transparencia y sin sorpresas. Eres partícipe activo de tu proyecto, no un espectador.",
-    pillar4_title: "Permanencia",
-    pillar4_text: "Diseñamos espacios que permanecen. Materiales de calidad, soluciones probadas y una visión a largo plazo que protege tu inversión.",
-
-    budapest_tag: "Por qué Budapest",
-    budapest_h2_1: "El destino europeo",
-    budapest_h2_2: "de inversión más",
-    budapest_h2_3: "interesante",
-    bp1_title: "Mercado inmobiliario dinámico",
-    bp1_text: "Budapest ofrece precios competitivos dentro de la UE con una rentabilidad por alquiler superior a la media europea.",
-    bp2_title: "Dentro de la Unión Europea",
-    bp2_text: "Seguridad jurídica europea con costes de construcción y reforma significativamente menores que en España o Europa occidental.",
-    bp3_title: "Servicio sin barreras",
-    bp3_text: "Con Constroleum, todo el proceso se gestiona en español. Sin sorpresas, sin idioma, sin complicaciones locales.",
-
-    contact_tag: "Hablemos",
-    contact_h2_1: "Tu proyecto en Budapest",
-    contact_h2_2: "empieza aquí",
-    contact_label_phone: "Teléfono & WhatsApp",
-    contact_label_email: "Email",
-    contact_label_address: "Dirección",
-    contact_label_follow: "Síguenos",
-    form_name: "Nombre",
-    form_name_ph: "Tu nombre",
-    form_email: "Email",
-    form_email_ph: "tu@email.com",
-    form_service: "Servicio de interés",
-    form_service_ph: "Selecciona un servicio",
-    form_message: "Cuéntanos tu proyecto",
-    form_message_ph: "Describe brevemente tu proyecto o consulta...",
-    form_send: "Enviar consulta",
-    form_ok: "¡Gracias! Nos pondremos en contacto contigo muy pronto.",
-    footer_copy: "© 2025 Constroleum · Todos los derechos reservados",
-
-    services_list: [
-      "Arquitectura mediterránea",
-      "Gestión de obra",
-      "Reforma integral",
-      "Consultoría de inversión",
-      "Project Management",
-      "Interiorismo & diseño"
-    ]
-  },
-
-  en: {
-    nav_services: "Services",
-    nav_philosophy: "Philosophy",
-    nav_budapest: "Budapest",
-    nav_contact: "Contact",
-    nav_cta: "Free consultation",
-
-    hero_tag: "Architecture & Construction · Budapest",
-    hero_h1_1: "Build your",
-    hero_h1_2: "future in",
-    hero_h1_em: "Budapest",
-    hero_desc: "Specialists in Mediterranean architecture and construction management for Spanish-speaking investors and owners in Hungary. Your project in Budapest, with the confidence of those who know both worlds.",
-    hero_btn1: "Talk to us",
-    hero_btn2: "Our services",
-
-    stat1_num: "Budapest",
-    stat1_label: "Operations base · Hungary",
-    stat2_label: "Full service in Spanish",
-    stat3_label: "360° project management",
-
-    services_tag: "What we do",
-    services_h2_1: "Full-service",
-    services_h2_2: "architecture",
-    services_h2_3: "& construction",
-    services_intro_p: "From the first visit to key handover, we manage every stage of your project in Budapest. We work especially with Spanish-speaking clients and foreign investors who want to renovate, build or invest in the Hungarian real estate market.",
-
-    s1_title: "Mediterranean architecture",
-    s1_desc: "Design that merges Mediterranean character with Budapest's spaces and regulations. Residential and commercial projects with their own identity.",
-    s2_title: "Construction management",
-    s2_desc: "Complete management and coordination of your construction in Budapest. We control timelines, quality and budget so you don't have to worry about anything.",
-    s3_title: "Comprehensive renovations",
-    s3_desc: "We transform apartments, premises and buildings with aesthetic and functional expertise. Premium materials and finishes that last decades in Hungary's demanding climate.",
-    s4_title: "Investment consulting",
-    s4_desc: "Advisory services for investing in Budapest real estate. We help you identify opportunities, manage permits and maximise your return on investment.",
-    s5_title: "Project Management",
-    s5_desc: "360° management of complex projects: from feasibility study to final handover. A single point of contact for your entire project in Hungary.",
-    s6_title: "Interior design",
-    s6_desc: "Interior design tailored to each client: from optimised rental apartments to high-end residences in the heart of Budapest.",
-
-    phil_tag: "Our philosophy",
-    phil_h2_1: "Spaces that",
-    phil_h2_em: "endure",
-    phil_lead: "Every project we sign reflects a way of understanding architecture: disciplined, honest and excellence-driven. We do not build for the short term.",
-    pillar1_title: "Technical rigour",
-    pillar1_text: "Every construction detail is studied, calculated and supervised. Technical precision is the foundation of any work that withstands the test of time.",
-    pillar2_title: "Excellence",
-    pillar2_text: "No project is too small. The level of demand we apply to a residential renovation is the same as to a large-scale project.",
-    pillar3_title: "Trust",
-    pillar3_text: "We work transparently and without surprises. You are an active participant in your project, not a spectator.",
-    pillar4_title: "Permanence",
-    pillar4_text: "We design spaces that last. Quality materials, proven solutions and a long-term vision that protects your investment.",
-
-    budapest_tag: "Why Budapest",
-    budapest_h2_1: "Europe's most",
-    budapest_h2_2: "interesting",
-    budapest_h2_3: "investment destination",
-    bp1_title: "Dynamic real estate market",
-    bp1_text: "Budapest offers competitive prices within the EU with rental yields above the European average.",
-    bp2_title: "Inside the European Union",
-    bp2_text: "European legal security with construction and renovation costs significantly lower than in Spain or Western Europe.",
-    bp3_title: "Service without barriers",
-    bp3_text: "With Constroleum, the entire process is managed in Spanish. No surprises, no language barriers, no local complications.",
-
-    contact_tag: "Let's talk",
-    contact_h2_1: "Your Budapest project",
-    contact_h2_2: "starts here",
-    contact_label_phone: "Phone & WhatsApp",
-    contact_label_email: "Email",
-    contact_label_address: "Address",
-    contact_label_follow: "Follow us",
-    form_name: "Name",
-    form_name_ph: "Your name",
-    form_email: "Email",
-    form_email_ph: "you@email.com",
-    form_service: "Service of interest",
-    form_service_ph: "Select a service",
-    form_message: "Tell us about your project",
-    form_message_ph: "Briefly describe your project or enquiry...",
-    form_send: "Send enquiry",
-    form_ok: "Thank you! We will be in touch very soon.",
-    footer_copy: "© 2025 Constroleum · All rights reserved",
-
-    services_list: [
-      "Mediterranean architecture",
-      "Construction management",
-      "Comprehensive renovation",
-      "Investment consulting",
-      "Project Management",
-      "Interior design"
-    ]
-  },
-
+  /* ─── MAGYAR (default / SEO master) ─── */
   hu: {
     nav_services: "Szolgáltatások",
-    nav_philosophy: "Filozófia",
-    nav_budapest: "Budapest",
-    nav_contact: "Kapcsolat",
-    nav_cta: "Ingyenes konzultáció",
+    nav_process:  "Folyamat",
+    nav_about:    "Rólunk",
+    nav_contact:  "Kapcsolat",
+    nav_cta:      "Ingyenes felmérés",
 
-    hero_tag: "Építészet & Kivitelezés · Budapest",
-    hero_h1_1: "Építsd meg",
-    hero_h1_2: "jövődet",
-    hero_h1_em: "Budapesten",
-    hero_desc: "Mediterrán építészetre és kivitelezés-menedzsmentre specializálódott csapat spanyol befektetők és tulajdonosok számára Magyarországon. A te projekted Budapesten, azok bizalmával, akik ismerik mindkét világot.",
-    hero_btn1: "Kapcsolatfelvétel",
-    hero_btn2: "Szolgáltatásaink",
+    hero_tag:   "Generálkivitelező · Budapest",
+    hero_h1_em: "Kulcsrakész",
+    hero_h1_1:  "kivitelezés",
+    hero_h1_2:  "Budapesten",
+    hero_desc:  "Teljes körű lakásfelújítás, épületrehabilitáció és generálkivitelezés. Tervezéstől az átadásig — egyetlen kézből, határidőre, garanciával.",
+    hero_btn1:  "Ingyenes felmérés",
+    hero_btn2:  "Szolgáltatásaink",
 
-    stat1_num: "Budapest",
-    stat1_label: "Működési bázis · Magyarország",
-    stat2_label: "Teljes körű spanyol nyelvű szolgáltatás",
-    stat3_label: "360° projektmenedzsment",
+    stat1_num:   "360°",
+    stat1_label: "Teljes körű projektkezelés",
+    stat2_num:   "Kulcsrakész",
+    stat2_label: "Átadás garanciával",
+    stat3_num:   "3 nyelven",
+    stat3_label: "Magyar · Spanyol · Angol",
 
-    services_tag: "Amit csinálunk",
-    services_h2_1: "Teljes körű",
-    services_h2_2: "építészeti",
-    services_h2_3: "és kivitelezési szolgáltatások",
-    services_intro_p: "Az első látogatástól a kulcsátadásig minden lépést kezelünk. Elsősorban spanyolajkú ügyfelekkel és külföldi befektetőkkel dolgozunk, akik felújítani, építeni vagy befektetni szeretnének a magyar ingatlanpiacon.",
+    services_tag:        "Amit csinálunk",
+    services_h2_1:       "Teljes körű",
+    services_h2_2:       "kivitelezési",
+    services_h2_3:       "megoldások",
+    services_intro_p:    "Az első helyszíni felméréstől a kulcsátadásig minden feladatot elvállalunk. Generálkivitelezőként egyetlen kapcsolattartót biztosítunk az egész projekt során — alvállalkozók koordinációjától az engedélyezésen át a minőségellenőrzésig.",
+    services_visual_cap: "Generálkivitelezés · Budapest",
 
-    s1_title: "Mediterrán építészet",
-    s1_desc: "Tervezés, amely ötvözi a mediterrán karaktert Budapest tereivel és szabályozásával. Saját identitású lakó- és kereskedelmi projektek.",
-    s2_title: "Kivitelezés-menedzsment",
-    s2_desc: "Budapesti építési projektjének teljes körű irányítása és koordinációja. Határidőket, minőséget és költségvetést kontrolálunk.",
-    s3_title: "Teljes körű felújítás",
-    s3_desc: "Lakások, helyiségek és épületek átalakítása esztétikai és funkcionális szempontok alapján. Prémium anyagok és évtizedekig tartó megoldások.",
-    s4_title: "Befektetési tanácsadás",
-    s4_desc: "Tanácsadás budapesti ingatlanberuházáshoz. Segítünk a lehetőségek azonosításában, az engedélyek kezelésében és a megtérülés maximalizálásában.",
-    s5_title: "Projektmenedzsment",
-    s5_desc: "Összetett projektek 360°-os kezelése: a megvalósíthatósági tanulmánytól a végső átadásig. Egyetlen kapcsolattartó az egész projekthez.",
+    s1_title: "Generálkivitelezés",
+    s1_desc:  "Teljes körű kivitelezés egyetlen kézből. Koordináljuk az összes szakipart és felelünk a határidőkért, a minőségért és a költségvetésért.",
+    s2_title: "Kulcsrakész felújítás",
+    s2_desc:  "A lakás átadása teljesen kész állapotban: tervezéstől, engedélyezéstől és bontástól a bútorozásig és takarításig. Ön csak be kell, hogy lépjen.",
+    s3_title: "Épületrehabilitáció",
+    s3_desc:  "Társasházak, irodaházak és kereskedelmi épületek teljes körű rehabilitációja: homlokzat, közös területek, gépészet, energetikai korszerűsítés.",
+    s4_title: "Építési vezető / Műszaki ellenőr",
+    s4_desc:  "Független műszaki ellenőrzés és építési vezetés — ha már van kivitelezője, de szakmai felügyeletre van szüksége az ön érdekében.",
+    s5_title: "Projekt- és költségvetés-tervezés",
+    s5_desc:  "Megvalósíthatósági tanulmány, részletes tételes árajánlat, hetes ütemterv és alvállalkozó-kiválasztás. Nincsenek meglepetések.",
     s6_title: "Belsőépítészet & design",
-    s6_desc: "Személyre szabott belsőépítészet: optimalizált bérleményektől a Budapest szívében lévő prémium rezidenciákig.",
+    s6_desc:  "Tértervezéstől anyagválasztáson át a bútorozásig: esztétika és funkcionalitás tökéletes egyensúlyban minden projektben.",
+    s7_title: "Befektetési tanácsadás",
+    s7_desc:  "Ingatlanértékelés, felújítási megtérülési számítás, engedélyezési tanácsadás és piaci stratégia a budapesti ingatlanpiacon.",
+    s8_title: "Komplett adminisztratív asszisztencia",
+    s8_desc:  "Hatósági engedélyek, tervdokumentáció, hatósági egyeztetések — különösen külföldi ügyfelek számára, akik nem ismerik a magyar eljárásrendet.",
 
-    phil_tag: "Filozófiánk",
-    phil_h2_1: "Terek, amelyek",
-    phil_h2_em: "megmaradnak",
-    phil_lead: "Minden projektet, amelyet aláírunk, az építészet egy megközelítése tükröz: fegyelmezett, becsületes és a kiválóság felé orientált. Nem rövid távra építünk.",
+    mb1_label: "Kulcsrakész felújítás",
+    mb2_label: "Prémium kivitelezés",
+    mb3_label: "Konyhafelújítás",
+    mb4_label: "Modern belső terek",
+    mb_quote:  "Tervezéstől<br>az átadásig —<br><em>egyetlen kézből</em>",
+
+    process_tag:  "Hogyan dolgozunk",
+    process_h2_1: "A projektünk",
+    process_h2_2: "folyamata",
+    process_lead: "Minden projekt ugyanazon a kipróbált folyamaton megy át. Nincsenek meglepetések — csak átlátható, kontrollált kivitelezés.",
+
+    step1_title: "Ingyenes helyszíni felmérés",
+    step1_desc:  "Felkeressük az ingatlant, megértjük az igényeit és műszakilag felmérjük a munkák körét. Külföldi ügyfeleknek videóhívásos felmérést is kínálunk.",
+    step2_title: "Részletes árajánlat & ütemterv",
+    step2_desc:  "Tételes költségvetést és hetes bontású ütemtervet készítünk. Minden sor tartalmazza az anyag- és munkadíjat — semmi rejtett tétel.",
+    step3_title: "Tervezés & engedélyezés",
+    step3_desc:  "Koordináljuk az építészeti és belsőépítészeti terveket, intézzük az összes hatósági engedélyt és dokumentációt.",
+    step4_title: "Kivitelezés & napi felügyelet",
+    step4_desc:  "Napi helyszíni felügyelettel dolgozunk. Heti fotóriportot küldünk az előrehaladásról, és azonnal jelzünk minden eltérést.",
+    step5_title: "Minőségellenőrzés & átadás",
+    step5_desc:  "Átadás előtt belső minőségellenőrzést végzünk minden fázisra. Az átadás dokumentált, tételes ellenőrzőlistával és garanciával történik.",
+    step6_title: "Utógondozás & garancia",
+    step6_desc:  "Garanciális időszak alatt elérhető vagyunk, és elvégezzük az ingatlan éves műszaki ellenőrzését kérés esetén.",
+
+    phil_tag:   "Rólunk",
+    phil_h2_1:  "Épületek,",
+    phil_h2_em: "amelyek kitartanak",
+    phil_lead:  "A Constroleum egy tapasztalt generálkivitelező csapat Budapesten, spanyol-magyar szakmai háttérrel. Technikai pontosság, átláthatóság és hosszú távú gondolkodás.",
+
     pillar1_title: "Technikai szigor",
-    pillar1_text: "Minden építészeti részletet tanulmányozunk, kiszámítunk és felügyelünk. A technikai pontosság az alapja minden időtálló munkának.",
-    pillar2_title: "Kiválóság",
-    pillar2_text: "Nincs kis projekt. A lakásfelújításra alkalmazott igényességi szint ugyanaz, mint egy nagyszabású projektnél.",
-    pillar3_title: "Bizalom",
-    pillar3_text: "Átláthatóan és meglepetések nélkül dolgozunk. Aktív résztvevője vagy a projektednek, nem csupán szemlélő.",
-    pillar4_title: "Állandóság",
-    pillar4_text: "Maradandó tereket tervezünk. Minőségi anyagok, bevált megoldások és hosszú távú szemlélet, amely védi befektetésedet.",
+    pillar1_text:  "Minden szerkezeti és gépészeti részletet tervezünk, számítunk és ellenőrzünk. A technikai pontosság az alapja minden időtálló munkának.",
+    pillar2_title: "Átláthatóság",
+    pillar2_text:  "Tételes árajánlat, heti riportok, dokumentált átadás. Mindig tudja, hol tart a projekt és mi a következő lépés.",
+    pillar3_title: "Egyetlen felelős kéz",
+    pillar3_text:  "Generálkivitelezőként mi vállalunk felelősséget az összes alvállalkozóért. Ön nem koordinál — Ön csak dönt és átvesz.",
+    pillar4_title: "Hosszú távú szemlélet",
+    pillar4_text:  "Minőségi anyagokat, bevált technológiákat és tartós megoldásokat alkalmazunk. Egy felújítás befektetés — és mi úgy kezeljük.",
 
-    budapest_tag: "Miért Budapest",
-    budapest_h2_1: "Európa legérdekesebb",
-    budapest_h2_2: "befektetési",
-    budapest_h2_3: "célpontja",
-    bp1_title: "Dinamikus ingatlanpiac",
-    bp1_text: "Budapest az EU-n belül versenyképes árakat és az európai átlagnál magasabb bérleti hozamot kínál.",
-    bp2_title: "Az Európai Unión belül",
-    bp2_text: "Európai jogbiztonság, Spanyolországnál és Nyugat-Európánál lényegesen alacsonyabb építési és felújítási költségekkel.",
-    bp3_title: "Akadálymentes szolgáltatás",
-    bp3_text: "A Constroleummal az egész folyamatot spanyolul kezeljük. Nincs meglepetés, nincs nyelvi akadály, nincsenek helyi bonyodalmak.",
+    faq_title: "Gyakori<br><em>kérdések</em>",
+    faq1_q: "Mi az a kulcsrakész felújítás, és mit tartalmaz pontosan?",
+    faq1_a: "A kulcsrakész felújítás azt jelenti, hogy a Constroleum az összes munkát tervezi és koordinálja: tervezés, engedélyezés, bontás, szerkezetépítés, gépészet, villamos, burkolás, festés, bútorozás — egészen az átadásig és takarításig. Önnek csak az elkészült ingatlant kell átvennie.",
+    faq2_q: "Mennyibe kerül egy lakásfelújítás Budapesten 2025-ben?",
+    faq2_a: "A lakásfelújítás ára 150 000–450 000 Ft/m² között mozog a munkák körétől és kivitelezési szinttől függően. Ingyenes helyszíni felmérésen pontos, tételes árajánlatot adunk.",
+    faq3_q: "Mennyi ideig tart egy komplett lakásfelújítás?",
+    faq3_a: "Egy átlagos 50–80 m²-es lakás teljes felújítása általában 8–16 hetet vesz igénybe. Minden projekt kezdetén részletes ütemtervet és heti fotóriportot adunk.",
+    faq4_q: "Mi a különbség a generálkivitelező és a hagyományos alvállalkozó között?",
+    faq4_a: "A generálkivitelező egyetlen felelős partnerként felel az összes munkáért. Ő köti a szerződéseket, koordinálja a munkafázisokat, felelős a határidőkért és a minőségért. Önnek egyetlen kapcsolattartója van.",
+    faq5_q: "Külföldi befektetők számára is végeznek munkákat?",
+    faq5_a: "Igen, ez az egyik fő szakterületünk. Spanyol és angol anyanyelvű ügyfelek számára teljes körű projektet kezelünk — spanyolul, angolul és magyarul is kommunikálunk. Önnek nem kell Budapesten lennie a folyamat során.",
+    faq6_q: "Vállalnak műszaki ellenőri és építési vezető feladatot is?",
+    faq6_a: "Igen. Ha már van saját kivitelezője, de szakmai felügyeletre van szüksége, a Constroleum vállalja a független műszaki ellenőr és felelős műszaki vezető szerepét is.",
+    faq7_q: "Milyen garanciát adnak a munkákra?",
+    faq7_a: "Minden munkára írásban vállalunk garanciát. Szerkezeti munkák: 5 év, gépészet/villamos: 2–3 év, burkolat/festés: 1–2 év. Garanciális időszakban díjmentesen javítjuk a hibákat.",
 
-    contact_tag: "Beszéljünk",
-    contact_h2_1: "Budapesti projekted",
-    contact_h2_2: "itt kezdődik",
-    contact_label_phone: "Telefon & WhatsApp",
-    contact_label_email: "Email",
-    contact_label_address: "Cím",
-    contact_label_follow: "Kövess minket",
-    form_name: "Név",
-    form_name_ph: "A neved",
-    form_email: "Email",
-    form_email_ph: "te@email.hu",
-    form_service: "Érdeklődési terület",
-    form_service_ph: "Válassz egy szolgáltatást",
-    form_message: "Mesélj a projektedről",
-    form_message_ph: "Röviden írd le projektjét vagy kérdésedet...",
-    form_send: "Üzenet küldése",
-    form_ok: "Köszönjük! Hamarosan felvesszük veled a kapcsolatot.",
-    footer_copy: "© 2025 Constroleum · Minden jog fenntartva",
+    contact_tag:          "Kapcsolat",
+    contact_h2_1:         "Indítsuk el",
+    contact_h2_2:         "a projektjét",
+    contact_label_phone:  "Telefon & WhatsApp",
+    contact_label_email:  "Email",
+    contact_label_address:"Cím",
+    contact_label_follow: "Kövessen minket",
+    form_name:            "Név",
+    form_email_label:     "Email",
+    form_service:         "Érdeklődési terület",
+    form_service_ph:      "Válasszon szolgáltatást",
+    form_message:         "Üzenet",
+    form_send:            "Üzenet küldése",
+    form_ok:              "Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.",
+    form_error:           "Kérjük töltse ki a nevet, emailt és üzenetet.",
+    form_error_send:      "Küldési hiba. Írjon közvetlenül: constroleum@gmail.com",
+    footer_copy:          "© 2025 Constroleum · Minden jog fenntartva",
 
     services_list: [
-      "Mediterrán építészet",
-      "Kivitelezés-menedzsment",
-      "Teljes körű felújítás",
+      "Generálkivitelezés",
+      "Kulcsrakész felújítás",
+      "Épületrehabilitáció",
+      "Építési vezető / Műszaki ellenőr",
+      "Projekt- és költségvetés-tervezés",
+      "Belsőépítészet & design",
       "Befektetési tanácsadás",
-      "Projektmenedzsment",
-      "Belsőépítészet & design"
+      "Komplett adminisztratív asszisztencia"
+    ]
+  },
+
+  /* ─── ESPAÑOL ─── */
+  es: {
+    nav_services: "Servicios",
+    nav_process:  "Proceso",
+    nav_about:    "Nosotros",
+    nav_contact:  "Contacto",
+    nav_cta:      "Consulta gratuita",
+
+    hero_tag:   "Jefatura de Obra & Construcción · Budapest",
+    hero_h1_em: "Llave en mano",
+    hero_h1_1:  "rehabilitación",
+    hero_h1_2:  "en Budapest",
+    hero_desc:  "Gestión integral de obra, reforma y rehabilitación de edificios en Budapest. Desde el proyecto hasta la entrega — un solo interlocutor, plazos garantizados.",
+    hero_btn1:  "Hablar con nosotros",
+    hero_btn2:  "Nuestros servicios",
+
+    stat1_num:   "360°",
+    stat1_label: "Gestión integral de proyecto",
+    stat2_num:   "Llave en mano",
+    stat2_label: "Entrega con garantía",
+    stat3_num:   "3 idiomas",
+    stat3_label: "Español · Húngaro · Inglés",
+
+    services_tag:        "Lo que hacemos",
+    services_h2_1:       "Gestión",
+    services_h2_2:       "integral",
+    services_h2_3:       "de obra",
+    services_intro_p:    "Desde la primera visita hasta la entrega de llaves, gestionamos cada etapa de tu proyecto en Budapest. Como empresa de gestión integral, somos el único interlocutor — coordinamos subcontratistas, permisos, materiales y control de calidad.",
+    services_visual_cap: "Rehabilitación integral · Budapest",
+
+    s1_title: "Gestión integral de obra",
+    s1_desc:  "Coordinación completa de todos los gremios: albañilería, instalaciones, electricidad, revestimientos, carpintería. Un solo responsable para todo el proyecto.",
+    s2_title: "Entrega llave en mano",
+    s2_desc:  "El inmueble completamente terminado: proyecto, licencias, derribo, estructura, instalaciones, acabados, amueblamiento y limpieza. Solo tienes que abrir la puerta.",
+    s3_title: "Rehabilitación de edificios",
+    s3_desc:  "Rehabilitación integral de comunidades, edificios de oficinas y locales comerciales: fachadas, zonas comunes, instalaciones, eficiencia energética.",
+    s4_title: "Jefatura de obra / Dirección técnica",
+    s4_desc:  "Si ya tienes tus contratistas, asumimos la jefatura de obra y la dirección facultativa — supervisión técnica independiente en defensa de tus intereses.",
+    s5_title: "Planificación y presupuesto",
+    s5_desc:  "Estudio de viabilidad, presupuesto detallado por partidas, cronograma semanal y selección de subcontratistas. Sin sorpresas ni costes ocultos.",
+    s6_title: "Interiorismo & diseño",
+    s6_desc:  "Desde el proyecto de interiorismo hasta la selección de materiales y el amueblamiento: equilibrio perfecto entre estética y funcionalidad.",
+    s7_title: "Asesoría de inversión inmobiliaria",
+    s7_desc:  "Valoración de inmuebles, cálculo de retorno de inversión post-reforma, asesoramiento en permisos y estrategia de mercado inmobiliario en Budapest.",
+    s8_title: "Asistencia integral",
+    s8_desc:  "Gestión completa de trámites administrativos y licencias en Hungría — especialmente para inversores extranjeros que desconocen la burocracia local.",
+
+    mb1_label: "Rehabilitación integral",
+    mb2_label: "Acabados premium",
+    mb3_label: "Cocina · diseño",
+    mb4_label: "Espacios modernos",
+    mb_quote:  "Del proyecto<br>a la entrega —<br><em>un solo equipo</em>",
+
+    process_tag:  "Cómo trabajamos",
+    process_h2_1: "Nuestro proceso",
+    process_h2_2: "de obra",
+    process_lead: "Cada proyecto sigue el mismo proceso probado. Sin sorpresas — solo ejecución transparente y controlada.",
+
+    step1_title: "Visita y felmérés gratuitos",
+    step1_desc:  "Visitamos el inmueble, entendemos tus necesidades y realizamos una valoración técnica del alcance de los trabajos. Para clientes extranjeros también ofrecemos visita por videollamada.",
+    step2_title: "Presupuesto detallado y cronograma",
+    step2_desc:  "Presupuesto por partidas y cronograma semanal detallado. Cada línea incluye materiales y mano de obra — sin costes ocultos, sin letra pequeña.",
+    step3_title: "Proyecto y licencias",
+    step3_desc:  "Coordinamos los planos arquitectónicos y de interiorismo, y gestionamos todas las licencias y documentación ante las administraciones competentes.",
+    step4_title: "Ejecución y supervisión diaria",
+    step4_desc:  "Supervisión diaria en obra. Informe fotográfico semanal del avance, y comunicación inmediata de cualquier desviación sobre el cronograma.",
+    step5_title: "Control de calidad y entrega",
+    step5_desc:  "Antes de la entrega realizamos un control interno de calidad en cada fase. La entrega se documenta con checklist detallado y garantía escrita.",
+    step6_title: "Postventa y garantía",
+    step6_desc:  "La entrega no es el final de la relación. Disponibles durante el período de garantía, con revisión técnica anual del inmueble a petición.",
+
+    phil_tag:   "Nosotros",
+    phil_h2_1:  "Edificios que",
+    phil_h2_em: "perduran",
+    phil_lead:  "Constroleum es un equipo experimentado de gestión integral de obras en Budapest, con raíces hispano-húngaras. Precisión técnica, transparencia y visión a largo plazo.",
+
+    pillar1_title: "Rigor técnico",
+    pillar1_text:  "Cada detalle estructural e instalación se planifica, calcula y supervisa. La precisión técnica es la base de cualquier obra que resiste el tiempo.",
+    pillar2_title: "Transparencia total",
+    pillar2_text:  "Presupuesto por partidas, informes semanales, entrega documentada. Siempre sabes en qué punto está la obra y cuánto presupuesto queda.",
+    pillar3_title: "Un único responsable",
+    pillar3_text:  "Como gestor integral, somos responsables de todos los subcontratistas. Tú no coordinas — tú decides y recibes la obra terminada.",
+    pillar4_title: "Visión a largo plazo",
+    pillar4_text:  "Materiales de calidad, tecnologías probadas y soluciones duraderas. Una reforma es una inversión — y la tratamos como tal.",
+
+    faq_title: "Preguntas<br><em>frecuentes</em>",
+    faq1_q: "¿Qué incluye exactamente la entrega llave en mano?",
+    faq1_a: "La entrega llave en mano incluye todo: proyecto, licencias, derribo, estructura, instalaciones de fontanería, climatización y electricidad, revestimientos, pintura, carpintería, amueblamiento y limpieza final. Solo tienes que abrir la puerta.",
+    faq2_q: "¿Cuánto cuesta una reforma integral en Budapest?",
+    faq2_a: "Una reforma completa en Budapest oscila entre 400 y 1.200 €/m² según el nivel de acabados. Significativamente más barato que en España o Europa occidental. Ofrecemos presupuesto detallado por partidas tras visita gratuita.",
+    faq3_q: "¿Cuánto tiempo tarda una reforma integral?",
+    faq3_a: "Una reforma completa de 50–80 m² tarda entre 8 y 16 semanas según el alcance y los permisos necesarios. Al inicio del proyecto entregamos un cronograma semanal detallado con informe fotográfico de seguimiento.",
+    faq4_q: "¿Puedo gestionar la reforma desde España?",
+    faq4_a: "Absolutamente. Esta es una de nuestras especialidades. Gestionamos todo sobre el terreno en Budapest — permisos, subcontratistas, materiales, control de calidad — y te mantenemos informado por videollamada e informes semanales.",
+    faq5_q: "¿Hacéis también jefatura de obra si ya tengo mis contratistas?",
+    faq5_a: "Sí. Si ya tienes contratistas de confianza, Constroleum puede asumir la jefatura de obra y dirección técnica — supervisión independiente en defensa de tus intereses.",
+    faq6_q: "¿Qué garantías ofrecéis?",
+    faq6_a: "Ofrecemos garantía escrita en todos los trabajos: 5 años en obra estructural, 2–3 años en instalaciones, 1–2 años en revestimientos y pintura. Durante el período de garantía reparamos defectos sin coste.",
+    faq7_q: "¿También asesoráis en inversión inmobiliaria en Budapest?",
+    faq7_a: "Sí. Ofrecemos asesoría completa para inversores: valoración del inmueble, estimación del coste de reforma, cálculo del retorno esperado (alquiler turístico vs. residencial), y acompañamiento durante todo el proceso de compra y reforma.",
+
+    contact_tag:          "Hablemos",
+    contact_h2_1:         "Tu proyecto",
+    contact_h2_2:         "empieza aquí",
+    contact_label_phone:  "Teléfono & WhatsApp",
+    contact_label_email:  "Email",
+    contact_label_address:"Dirección",
+    contact_label_follow: "Síguenos",
+    form_name:            "Nombre",
+    form_email_label:     "Email",
+    form_service:         "Servicio de interés",
+    form_service_ph:      "Selecciona un servicio",
+    form_message:         "Cuéntanos tu proyecto",
+    form_send:            "Enviar consulta",
+    form_ok:              "¡Gracias! Nos pondremos en contacto muy pronto.",
+    form_error:           "Por favor completa nombre, email y mensaje.",
+    form_error_send:      "Error al enviar. Escríbenos a constroleum@gmail.com",
+    footer_copy:          "© 2025 Constroleum · Todos los derechos reservados",
+
+    services_list: [
+      "Gestión integral de obra",
+      "Entrega llave en mano",
+      "Rehabilitación de edificios",
+      "Jefatura de obra / Dirección técnica",
+      "Planificación y presupuesto",
+      "Interiorismo & diseño",
+      "Asesoría de inversión inmobiliaria",
+      "Asistencia integral"
+    ]
+  },
+
+  /* ─── ENGLISH ─── */
+  en: {
+    nav_services: "Services",
+    nav_process:  "Process",
+    nav_about:    "About",
+    nav_contact:  "Contact",
+    nav_cta:      "Free assessment",
+
+    hero_tag:   "General Contractor & Construction · Budapest",
+    hero_h1_em: "Turnkey",
+    hero_h1_1:  "renovation &",
+    hero_h1_2:  "construction Budapest",
+    hero_desc:  "Full construction management, apartment renovation and building rehabilitation in Budapest. From project to handover — one team, one contract, on time.",
+    hero_btn1:  "Get a free quote",
+    hero_btn2:  "Our services",
+
+    stat1_num:   "360°",
+    stat1_label: "Full project management",
+    stat2_num:   "Turnkey",
+    stat2_label: "Handover with guarantee",
+    stat3_num:   "3 languages",
+    stat3_label: "Hungarian · Spanish · English",
+
+    services_tag:        "What we do",
+    services_h2_1:       "Full-service",
+    services_h2_2:       "construction",
+    services_h2_3:       "management",
+    services_intro_p:    "From the first site assessment to key handover, we manage every stage. As general contractor, we are your single point of contact — coordinating all subcontractors, permits, materials and quality control.",
+    services_visual_cap: "General contracting · Budapest",
+
+    s1_title: "General contracting",
+    s1_desc:  "Full construction management from a single hand. We coordinate all trades — masonry, plumbing, electrical, tiling, joinery — and are responsible for timelines, quality and budget.",
+    s2_title: "Turnkey renovation",
+    s2_desc:  "Complete property handover: from planning, permits and demolition through to flooring, painting, furnishing and cleaning. You just walk in.",
+    s3_title: "Building rehabilitation",
+    s3_desc:  "Full rehabilitation of apartment buildings, office blocks and commercial properties: façades, common areas, M&E systems, energy efficiency upgrades.",
+    s4_title: "Site manager / Technical supervisor",
+    s4_desc:  "If you already have contractors, we act as independent site manager and technical supervisor — quality oversight in your interest, not the builder's.",
+    s5_title: "Project planning & budgeting",
+    s5_desc:  "Feasibility study, detailed line-item budget, weekly schedule and subcontractor selection. No hidden costs, no surprises.",
+    s6_title: "Interior design",
+    s6_desc:  "From space planning and material selection to furniture sourcing and styling: aesthetic and functional balance in every project.",
+    s7_title: "Property investment advisory",
+    s7_desc:  "Property valuation, post-renovation ROI calculation, permit advisory and market strategy for the Budapest real estate market.",
+    s8_title: "Full administrative assistance",
+    s8_desc:  "Complete management of permits, technical documentation and authority liaison — especially valuable for foreign investors unfamiliar with Hungarian procedures.",
+
+    mb1_label: "Turnkey renovation",
+    mb2_label: "Premium fit-out",
+    mb3_label: "Kitchen · design",
+    mb4_label: "Modern interiors",
+    mb_quote:  "From planning<br>to handover —<br><em>one team</em>",
+
+    process_tag:  "How we work",
+    process_h2_1: "Our project",
+    process_h2_2: "process",
+    process_lead: "Every project follows the same proven process. No surprises — just transparent, controlled delivery.",
+
+    step1_title: "Free site assessment",
+    step1_desc:  "We visit the property, understand your requirements and technically scope the works. For overseas clients we also offer video call assessments.",
+    step2_title: "Detailed quote & schedule",
+    step2_desc:  "Line-item budget and weekly project schedule. Every line includes materials and labour — no hidden costs, no small print.",
+    step3_title: "Design & permits",
+    step3_desc:  "We coordinate architectural and interior design drawings, and manage all authority permits and documentation on your behalf.",
+    step4_title: "Construction & daily supervision",
+    step4_desc:  "Daily on-site supervision throughout construction. Weekly photo progress reports and immediate notification of any schedule deviation.",
+    step5_title: "Quality control & handover",
+    step5_desc:  "Internal quality check on every phase before handover. Documented handover with detailed checklist and written guarantee.",
+    step6_title: "Aftercare & guarantee",
+    step6_desc:  "We remain available throughout the guarantee period and carry out annual technical inspections on request.",
+
+    phil_tag:   "About us",
+    phil_h2_1:  "Buildings that",
+    phil_h2_em: "endure",
+    phil_lead:  "Constroleum is an experienced general contracting team in Budapest with Spanish-Hungarian professional roots. Technical precision, transparency and long-term thinking.",
+
+    pillar1_title: "Technical rigour",
+    pillar1_text:  "Every structural and M&E detail is planned, calculated and inspected. Technical precision is the foundation of any work that stands the test of time.",
+    pillar2_title: "Full transparency",
+    pillar2_text:  "Line-item budgets, weekly reports, documented handover. You always know where the project stands and what budget remains.",
+    pillar3_title: "Single point of responsibility",
+    pillar3_text:  "As general contractor we are accountable for every subcontractor. You don't coordinate — you decide and receive the finished property.",
+    pillar4_title: "Long-term thinking",
+    pillar4_text:  "Quality materials, proven technologies, durable solutions. A renovation is an investment — and we treat it as one.",
+
+    faq_title: "Frequently<br><em>asked questions</em>",
+    faq1_q: "What exactly does turnkey renovation include?",
+    faq1_a: "Turnkey renovation means Constroleum plans and coordinates everything: design, permits, demolition, structural work, plumbing, electrical, tiling, painting, furnishing — right through to final cleaning and handover. You simply walk in.",
+    faq2_q: "How much does a full apartment renovation cost in Budapest?",
+    faq2_a: "A complete renovation in Budapest ranges from €400 to €1,200/m² depending on finish level — significantly below Western European prices. We provide a detailed line-item quote following a free site visit.",
+    faq3_q: "How long does a complete renovation take?",
+    faq3_a: "A typical 50–80 m² full renovation takes 8–16 weeks depending on scope and permit requirements. We provide a detailed weekly schedule at project start and send photo progress reports weekly.",
+    faq4_q: "Can you manage the renovation remotely?",
+    faq4_a: "Absolutely — this is a core competency. We manage everything on the ground in Budapest and keep you informed via video calls and weekly reports. You don't need to be in Hungary.",
+    faq5_q: "Do you also offer site management if I already have contractors?",
+    faq5_a: "Yes. If you have existing contractors, Constroleum can act as independent site manager and technical supervisor — overseeing quality and compliance in your interest.",
+    faq6_q: "What guarantees do you offer?",
+    faq6_a: "Written guarantees on all works: 5 years on structural works, 2–3 years on M&E systems, 1–2 years on finishes and painting. All defects repaired at no cost during the guarantee period.",
+    faq7_q: "Do you provide property investment advisory?",
+    faq7_a: "Yes. We advise on property valuation, renovation cost estimation, expected ROI (short-term vs long-term rental), and accompany you through the full purchase and renovation process in Budapest.",
+
+    contact_tag:          "Let's talk",
+    contact_h2_1:         "Start your",
+    contact_h2_2:         "project here",
+    contact_label_phone:  "Phone & WhatsApp",
+    contact_label_email:  "Email",
+    contact_label_address:"Address",
+    contact_label_follow: "Follow us",
+    form_name:            "Name",
+    form_email_label:     "Email",
+    form_service:         "Service of interest",
+    form_service_ph:      "Select a service",
+    form_message:         "Tell us about your project",
+    form_send:            "Send enquiry",
+    form_ok:              "Thank you! We will be in touch very soon.",
+    form_error:           "Please fill in your name, email and message.",
+    form_error_send:      "Send error. Please email us at constroleum@gmail.com",
+    footer_copy:          "© 2025 Constroleum · All rights reserved",
+
+    services_list: [
+      "General contracting",
+      "Turnkey renovation",
+      "Building rehabilitation",
+      "Site manager / Technical supervisor",
+      "Project planning & budgeting",
+      "Interior design",
+      "Property investment advisory",
+      "Full administrative assistance"
     ]
   }
 };
 
-// ===========================
-// LANGUAGE SWITCHING
-// ===========================
-let currentLang = 'es';
+// ================================================
+// LANGUAGE ENGINE
+// ================================================
+let currentLang = 'hu';
 
 function setLanguage(lang) {
+  if (!TRANSLATIONS[lang]) return;
   currentLang = lang;
-  const t = TRANSLATIONS[lang];
-
-  // Update lang attribute
   document.documentElement.lang = lang;
 
-  // Active button state
+  // Active button
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 
-  // Nav
-  document.querySelector('[data-i18n="nav_services"]').textContent = t.nav_services;
-  document.querySelector('[data-i18n="nav_philosophy"]').textContent = t.nav_philosophy;
-  document.querySelector('[data-i18n="nav_budapest"]').textContent = t.nav_budapest;
-  document.querySelector('[data-i18n="nav_contact"]').textContent = t.nav_contact;
-  document.querySelector('[data-i18n="nav_cta"]').textContent = t.nav_cta;
+  const t = TRANSLATIONS[lang];
 
-  // Hero
-  document.querySelector('[data-i18n="hero_tag"]').textContent = t.hero_tag;
-  document.querySelector('[data-i18n="hero_h1_1"]').textContent = t.hero_h1_1;
-  document.querySelector('[data-i18n="hero_h1_2"]').textContent = t.hero_h1_2;
-  document.querySelector('[data-i18n="hero_h1_em"]').textContent = t.hero_h1_em;
-  document.querySelector('[data-i18n="hero_desc"]').textContent = t.hero_desc;
-  document.querySelector('[data-i18n="hero_btn1"]').textContent = t.hero_btn1;
-  document.querySelector('[data-i18n="hero_btn2"]').textContent = t.hero_btn2;
-
-  // Stats
-  document.querySelector('[data-i18n="stat1_label"]').textContent = t.stat1_label;
-  document.querySelector('[data-i18n="stat2_label"]').textContent = t.stat2_label;
-  document.querySelector('[data-i18n="stat3_label"]').textContent = t.stat3_label;
-
-  // Services intro
-  document.querySelector('[data-i18n="services_tag"]').textContent = t.services_tag;
-  document.querySelector('[data-i18n="services_h2_1"]').textContent = t.services_h2_1;
-  document.querySelector('[data-i18n="services_h2_2"]').textContent = t.services_h2_2;
-  document.querySelector('[data-i18n="services_h2_3"]').textContent = t.services_h2_3;
-  document.querySelector('[data-i18n="services_intro_p"]').textContent = t.services_intro_p;
-
-  // Service cards
-  ['s1','s2','s3','s4','s5','s6'].forEach(s => {
-    document.querySelector(`[data-i18n="${s}_title"]`).textContent = t[`${s}_title`];
-    document.querySelector(`[data-i18n="${s}_desc"]`).textContent = t[`${s}_desc`];
+  // All simple data-i18n text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = t[key];
+      } else {
+        el.innerHTML = t[key];
+      }
+    }
   });
 
-  // Philosophy
-  document.querySelector('[data-i18n="phil_tag"]').textContent = t.phil_tag;
-  document.querySelector('[data-i18n="phil_h2_1"]').textContent = t.phil_h2_1;
-  document.querySelector('[data-i18n="phil_h2_em"]').textContent = t.phil_h2_em;
-  document.querySelector('[data-i18n="phil_lead"]').textContent = t.phil_lead;
-  document.querySelector('[data-i18n="pillar1_title"]').textContent = t.pillar1_title;
-  document.querySelector('[data-i18n="pillar1_text"]').textContent = t.pillar1_text;
-  document.querySelector('[data-i18n="pillar2_title"]').textContent = t.pillar2_title;
-  document.querySelector('[data-i18n="pillar2_text"]').textContent = t.pillar2_text;
-  document.querySelector('[data-i18n="pillar3_title"]').textContent = t.pillar3_title;
-  document.querySelector('[data-i18n="pillar3_text"]').textContent = t.pillar3_text;
-  document.querySelector('[data-i18n="pillar4_title"]').textContent = t.pillar4_title;
-  document.querySelector('[data-i18n="pillar4_text"]').textContent = t.pillar4_text;
+  // Moodboard quote (has innerHTML with <em>)
+  const mbQ = document.querySelector('.mb-quote');
+  if (mbQ && t.mb_quote) mbQ.innerHTML = t.mb_quote;
 
-  // Budapest section
-  document.querySelector('[data-i18n="budapest_tag"]').textContent = t.budapest_tag;
-  document.querySelector('[data-i18n="budapest_h2_1"]').textContent = t.budapest_h2_1;
-  document.querySelector('[data-i18n="budapest_h2_2"]').textContent = t.budapest_h2_2;
-  document.querySelector('[data-i18n="budapest_h2_3"]').textContent = t.budapest_h2_3;
-  document.querySelector('[data-i18n="bp1_title"]').textContent = t.bp1_title;
-  document.querySelector('[data-i18n="bp1_text"]').textContent = t.bp1_text;
-  document.querySelector('[data-i18n="bp2_title"]').textContent = t.bp2_title;
-  document.querySelector('[data-i18n="bp2_text"]').textContent = t.bp2_text;
-  document.querySelector('[data-i18n="bp3_title"]').textContent = t.bp3_title;
-  document.querySelector('[data-i18n="bp3_text"]').textContent = t.bp3_text;
+  // FAQ title with <em>
+  const faqTitle = document.querySelector('.faq-section .section-title');
+  if (faqTitle && t.faq_title) faqTitle.innerHTML = t.faq_title;
 
-  // Contact
-  document.querySelector('[data-i18n="contact_tag"]').textContent = t.contact_tag;
-  document.querySelector('[data-i18n="contact_h2_1"]').textContent = t.contact_h2_1;
-  document.querySelector('[data-i18n="contact_h2_2"]').textContent = t.contact_h2_2;
-  document.querySelector('[data-i18n="contact_label_phone"]').textContent = t.contact_label_phone;
-  document.querySelector('[data-i18n="contact_label_email"]').textContent = t.contact_label_email;
-  document.querySelector('[data-i18n="contact_label_address"]').textContent = t.contact_label_address;
-  document.querySelector('[data-i18n="contact_label_follow"]').textContent = t.contact_label_follow;
-  document.querySelector('[data-i18n="form_name"]').textContent = t.form_name;
-  document.querySelector('[data-i18n="form_name_ph"]').placeholder = t.form_name_ph;
-  document.querySelector('[data-i18n="form_email_label"]').textContent = t.form_email;
-  document.querySelector('[data-i18n="form_email_ph"]').placeholder = t.form_email_ph;
-  document.querySelector('[data-i18n="form_service"]').textContent = t.form_service;
-  document.querySelector('[data-i18n="form_message"]').textContent = t.form_message;
-  document.querySelector('[data-i18n="form_message_ph"]').placeholder = t.form_message_ph;
-  document.querySelector('[data-i18n="form_send"]').textContent = t.form_send;
-  document.querySelector('[data-i18n="footer_copy"]').textContent = t.footer_copy;
-
-  // Select options
+  // Rebuild service select
   const sel = document.getElementById('service-select');
-  sel.innerHTML = `<option value="">${t.form_service_ph}</option>`;
-  t.services_list.forEach(s => {
-    const opt = document.createElement('option');
-    opt.textContent = s;
-    sel.appendChild(opt);
-  });
+  if (sel && t.services_list) {
+    const ph = t.form_service_ph || t.form_service || '';
+    sel.innerHTML = `<option value="">${ph}</option>`;
+    t.services_list.forEach(s => {
+      const opt = document.createElement('option');
+      opt.textContent = s;
+      sel.appendChild(opt);
+    });
+  }
+
+  // Update page title & meta description for SEO
+  const titles = {
+    hu: 'Constroleum · Generálkivitelező Budapest | Lakásfelújítás, Kulcsrakész Kivitelezés',
+    es: 'Constroleum · Gestión Integral de Obra Budapest | Llave en Mano, Rehabilitación',
+    en: 'Constroleum · General Contractor Budapest | Turnkey Renovation & Rehabilitation'
+  };
+  const descs = {
+    hu: 'Generálkivitelező Budapest. Teljes körű lakásfelújítás, épületrehabilitáció, kulcsrakész kivitelezés. Tervezéstől átadásig — egyetlen kézből.',
+    es: 'Gestión integral de obra en Budapest. Reforma llave en mano, rehabilitación de edificios, jefatura de obra. Desde el proyecto hasta la entrega.',
+    en: 'General contractor Budapest. Turnkey apartment renovation, building rehabilitation, full construction management. From design to handover.'
+  };
+  document.title = titles[lang] || titles.hu;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.content = descs[lang] || descs.hu;
 }
 
-// ===========================
+// ================================================
 // MOBILE MENU
-// ===========================
+// ================================================
 function toggleMenu() {
   document.getElementById('navbar').classList.toggle('open');
 }
 
-// ===========================
-// CONTACT FORM
-// ===========================
-function sendForm() {
-  const t = TRANSLATIONS[currentLang];
-  alert(t.form_ok);
+// ================================================
+// EMAILJS — CONTACT FORM
+// ================================================
+// ─── HOW TO ACTIVATE ──────────────────────────────────────────
+// 1. Go to https://www.emailjs.com and create a free account
+// 2. Add Gmail service → note SERVICE_ID
+// 3. Create Email Template with vars:
+//      {{from_name}} {{reply_to}} {{phone}} {{service}}
+//      {{location}} {{message}} {{lang}}
+//    Set "To email" → constroleum@gmail.com
+//    Note TEMPLATE_ID
+// 4. Account → API Keys → copy Public Key
+// 5. Replace the three placeholders below
+// ──────────────────────────────────────────────────────────────
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Init lang from URL param or default HU
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = urlParams.get('lang');
+  setLanguage(urlLang && TRANSLATIONS[urlLang] ? urlLang : 'hu');
+
+  // EmailJS init
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
+  // Form submit
+  const form = document.getElementById('contact-form');
+  if (form) form.addEventListener('submit', handleFormSubmit);
+});
+
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  const form    = e.target;
+  const btn     = form.querySelector('.btn-submit');
+  const label   = btn.querySelector('.btn-label');
+  const spinner = btn.querySelector('.btn-spinner');
+  const status  = document.getElementById('form-status');
+  const t       = TRANSLATIONS[currentLang];
+
+  const name    = form.querySelector('#cf-name').value.trim();
+  const email   = form.querySelector('#cf-email').value.trim();
+  const message = form.querySelector('#cf-msg').value.trim();
+
+  if (!name || !email || !message) {
+    showStatus(status, 'error', t.form_error);
+    return;
+  }
+
+  btn.disabled   = true;
+  label.hidden   = true;
+  spinner.hidden = false;
+  status.className = 'form-status';
+  status.style.display = 'none';
+
+  // Add hidden lang field for template context
+  let langInput = form.querySelector('input[name="lang"]');
+  if (!langInput) {
+    langInput = document.createElement('input');
+    langInput.type = 'hidden';
+    langInput.name = 'lang';
+    form.appendChild(langInput);
+  }
+  langInput.value = currentLang.toUpperCase();
+
+  try {
+    if (typeof emailjs === 'undefined' || EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+      await new Promise(r => setTimeout(r, 1400));
+      showStatus(status, 'success', t.form_ok);
+      form.reset();
+    } else {
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+      showStatus(status, 'success', t.form_ok);
+      form.reset();
+    }
+  } catch (err) {
+    console.error('EmailJS error:', err);
+    showStatus(status, 'error', t.form_error_send);
+  } finally {
+    btn.disabled   = false;
+    label.hidden   = false;
+    spinner.hidden = true;
+  }
 }
 
-// ===========================
-// SCROLL EFFECTS
-// ===========================
+function showStatus(el, type, msg) {
+  el.className     = 'form-status ' + type;
+  el.textContent   = msg;
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ================================================
+// SCROLL — NAV
+// ================================================
 const navbar = document.getElementById('navbar');
-
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
 
-// Scroll reveal for service cards and pillars
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
+// ================================================
+// SCROLL REVEAL
+// ================================================
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
     if (e.isIntersecting) {
-      setTimeout(() => {
-        e.target.classList.add('visible');
-      }, e.target.dataset.delay || 0);
+      setTimeout(() => e.target.classList.add('visible'),
+        Number(e.target.dataset.delay) || 0);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
-document.querySelectorAll('.service-card').forEach((card, i) => {
-  card.dataset.delay = i * 80;
-  revealObserver.observe(card);
-});
-
-document.querySelectorAll('.pillar').forEach((pillar, i) => {
-  pillar.dataset.delay = i * 100;
-  revealObserver.observe(pillar);
-});
-
-// ===========================
-// INIT
-// ===========================
-document.addEventListener('DOMContentLoaded', () => {
-  setLanguage('es');
+document.querySelectorAll('.service-card, .pillar').forEach(el => {
+  revealObs.observe(el);
 });
