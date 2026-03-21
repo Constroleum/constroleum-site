@@ -488,9 +488,9 @@ function toggleMenu() {
 // 4. Account → API Keys → copy Public Key
 // 5. Replace the three placeholders below
 // ──────────────────────────────────────────────────────────────
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY  = '5mUia58WNl6OoBcRo';
+const EMAILJS_SERVICE_ID  = '5mUia58WNl6OoBcRo';
+const EMAILJS_TEMPLATE_ID = 'template_8m7s0xc';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Init lang from URL param or default HU
