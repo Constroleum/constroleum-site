@@ -112,9 +112,8 @@ nav.scrolled {
 }
 
 .nav-logo {
-  height: 32px;
+  height: 55px;
   width: auto;
-  filter: invert(1) sepia(0.5) saturate(0.5) brightness(0.35);
   transition: filter 0.3s;
 }
 
