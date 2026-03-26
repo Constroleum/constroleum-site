@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Calculator — Constroleum Budapest</title>
+  <meta name="description" content="Calculate an indicative budget for your renovation o rehabilitación en Budapest. Precios del mercado húngaro en HUF y EUR.">
+  <link rel="canonical" href="https://www.constroleum.hu/en/calculator/">
+  <link rel="alternate" hreflang="hu" href="https://www.constroleum.hu/hu/kalkulator/">
+  <link rel="alternate" hreflang="en" href="https://www.constroleum.hu/en/calculator/">
+  <link rel="alternate" hreflang="en" href="https://www.constroleum.hu/en/calculator/">
+  <link rel="icon" type="image/png" href="../../assets/images/Favicon Purple.png">
+  <link rel="apple-touch-icon" href="../../assets/images/Favicon Purple.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ── CALCULATOR PAGE OVERRIDES ── */
+    body { overflow-x: hidden; background: var(--bone); }
+
+    /* Hero calculadora */
+    .calc-hero {
+      padding: 8rem 3rem 4rem;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .calc-hero::before {
+      content: 'PRESUPUESTO';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(60px, 10vw, 130px);
+      font-weight: 500;
+      font-style: italic;
+      color: rgba(168, 82, 46, 0.08);
+      letter-spacing: 6px;
+      user-select: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .calc-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .calc-hero .eyebrow { color: var(--terra-lt); }
+    .calc-hero .eyebrow::before { background: var(--terra-lt); }
+    .calc-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .calc-hero h1 em { font-style: italic; color: var(--terra-lt); }
+    .calc-hero p {
+      color: rgba(250, 247, 243, 0.6);
+      font-size: 0.9rem;
+      font-weight: 300;
+      max-width: 540px;
+    }
+
+    /* Main layout */
+    .calc-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 3rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .calc-wrapper { grid-template-columns: 1fr; padding: 2rem 1.5rem 4rem; }
+      .calc-hero { padding: 7rem 1.5rem 3rem; }
+    }
+
+    /* ── SECTION CARDS ── */
+    .calc-section {
+      background: var(--white);
+      border: 1px solid var(--linen);
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+    }
+    .calc-section-header {
+      background: var(--ink);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .calc-section-num {
+      width: 28px;
+      height: 28px;
+      background: var(--terra);
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .calc-section-title {
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(250,247,243,0.85);
+    }
+    .calc-section-body { padding: 1.6rem; }
+
+    /* ── FORM ELEMENTS ── */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .form-row.triple { grid-template-columns: 1fr 1fr 1fr; }
+    .form-row.single { grid-template-columns: 1fr; }
+    .field { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    label {
+      font-size: 0.55rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-lt);
+    }
+
+    input[type="number"], select {
+      background: var(--bone);
+      border: 1px solid var(--linen);
+      color: var(--ink);
+      padding: 0.7rem 1rem;
+      font-size: 0.92rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    input[type="number"]:focus, select:focus { border-color: var(--terra); }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239a8470'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-color: var(--bone);
+      padding-right: 2.4rem;
+      cursor: pointer;
+    }
+
+    /* Slider */
+    .slider-display {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--terra);
+      line-height: 1;
+    }
+    .slider-display span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink-lt);
+      font-weight: 300;
+      margin-left: 0.3rem;
+    }
+    input[type="range"] {
+      width: 100%;
+      height: 2px;
+      background: var(--linen);
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      margin-top: 0.4rem;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: var(--terra);
+      cursor: pointer;
+      border-radius: 0;
+    }
+
+    /* Toggle cards */
+    .toggle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.7rem;
+    }
+    .toggle-card {
+      border: 1px solid var(--linen);
+      padding: 1rem 0.8rem;
+      cursor: pointer;
+      transition: all 0.18s;
+      text-align: center;
+      user-select: none;
+      position: relative;
+      background: var(--bone);
+    }
+    .toggle-card:hover { border-color: var(--terra-lt); }
+    .toggle-card.active {
+      border-color: var(--terra);
+      background: rgba(168, 82, 46, 0.06);
+    }
+    .toggle-card.active::after {
+      content: '✓';
+      position: absolute;
+      top: 6px; right: 8px;
+      color: var(--terra);
+      font-size: 0.65rem;
+      font-weight: 500;
+    }
+    .toggle-icon { font-size: 1.6rem; margin-bottom: 0.4rem; display: block; }
+    .toggle-label {
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-md);
+      line-height: 1.3;
+    }
+    .toggle-card.active .toggle-label { color: var(--terra); }
+    .toggle-price {
+      font-size: 0.6rem;
+      color: var(--ink-lt);
+      margin-top: 0.3rem;
+      font-weight: 300;
+    }
+
+    /* Extra items (baño) */
+    .extras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .extra-item {
+      border: 1px solid var(--linen);
+      padding: 0.8rem 0.6rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+      user-select: none;
+      position: relative;
+      background: var(--bone);
+    }
+    .extra-item:hover { border-color: var(--terra-lt); }
+    .extra-item.active {
+      border-color: var(--terra);
+      background: rgba(168, 82, 46, 0.06);
+    }
+    .extra-item.active::after {
+      content: '✓';
+      position: absolute;
+      top: 4px; right: 6px;
+      color: var(--terra); font-size: 0.6rem;
+    }
+    .extra-icon { font-size: 1.3rem; display: block; margin-bottom: 0.3rem; }
+    .extra-label {
+      font-size: 0.55rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-md);
+      line-height: 1.3;
+    }
+    .extra-item.active .extra-label { color: var(--terra); }
+    .extra-price {
+      font-size: 0.58rem;
+      color: var(--ink-lt);
+      margin-top: 0.2rem;
+      font-weight: 300;
+    }
+
+    /* Info note */
+    .info-note {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+      padding: 0.8rem 1rem;
+      background: rgba(168, 82, 46, 0.05);
+      border-left: 2px solid var(--terra);
+      font-size: 0.72rem;
+      color: var(--ink-md);
+      font-weight: 300;
+    }
+
+    /* ── SIDEBAR / PRESUPUESTO ── */
+    .calc-sidebar { position: sticky; top: 90px; }
+
+    .budget-card {
+      background: var(--white);
+      border: 1px solid var(--linen);
+      overflow: hidden;
+    }
+    .budget-card-header {
+      background: var(--ink);
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .budget-card-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .budget-card-header svg { opacity: 0.5; flex-shrink: 0; }
+
+    .budget-body { padding: 1.4rem; }
+
+    .budget-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(214, 200, 185, 0.4);
+      font-size: 0.78rem;
+      gap: 0.8rem;
+    }
+    .budget-line:last-child { border-bottom: none; }
+    .budget-line-label { color: var(--ink-md); flex: 1; line-height: 1.4; font-weight: 300; }
+    .budget-line-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--ink);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .budget-divider {
+      height: 1px;
+      background: var(--linen);
+      margin: 0.8rem 0;
+    }
+
+    .budget-subtotal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+    .budget-subtotal-label {
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-lt);
+    }
+    .budget-subtotal-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    .budget-margin-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.35rem 0;
+      font-size: 0.72rem;
+    }
+    .budget-margin-label { color: var(--ink-lt); font-weight: 300; }
+    .budget-margin-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      color: var(--ink-md);
+    }
+
+    .budget-total-box {
+      border: 1px solid var(--terra);
+      background: var(--ink);
+      padding: 1.4rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .budget-total-label {
+      font-size: 0.52rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--terra-lt);
+      margin-bottom: 0.5rem;
+    }
+    .budget-total-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .budget-total-currency {
+      font-size: 1.4rem;
+      color: var(--terra-lt);
+      margin-right: 0.2rem;
+    }
+    .budget-total-note {
+      font-size: 0.65rem;
+      color: rgba(250,247,243,0.4);
+      margin-top: 0.6rem;
+      font-weight: 300;
+    }
+
+    .budget-vat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.55rem 0.8rem;
+      margin-top: 0.5rem;
+      background: rgba(168,82,46,0.05);
+      font-size: 0.75rem;
+    }
+    .budget-vat-row.total-iva {
+      background: rgba(42, 33, 24, 0.06);
+      border-top: 1px solid var(--linen);
+      margin-top: 2px;
+    }
+    .budget-vat-label { color: var(--ink-md); font-weight: 300; }
+    .budget-vat-label.bold { font-weight: 500; color: var(--ink); }
+    .budget-vat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--ink-md);
+    }
+    .budget-vat-value.bold { color: var(--ink); font-size: 1rem; }
+
+    /* Currency toggle */
+    .currency-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .cur-btn {
+      flex: 1;
+      background: var(--bone);
+      border: 1px solid var(--linen);
+      color: var(--ink-lt);
+      padding: 0.55rem;
+      font-size: 0.6rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cur-btn:hover, .cur-btn.active {
+      background: var(--terra);
+      border-color: var(--terra);
+      color: var(--white);
+    }
+
+    /* CTA buttons */
+    .calc-cta-btn {
+      display: block;
+      width: 100%;
+      background: var(--terra);
+      color: var(--white);
+      border: none;
+      padding: 1rem 1.4rem;
+      font-size: 0.6rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s;
+      margin-top: 1rem;
+      text-align: center;
+      text-decoration: none;
+    }
+    .calc-cta-btn:hover { background: var(--terra-dk); }
+    .calc-cta-btn.secondary {
+      background: transparent;
+      border: 1px solid var(--linen);
+      color: var(--ink-md);
+      margin-top: 0.5rem;
+    }
+    .calc-cta-btn.secondary:hover {
+      border-color: var(--ink-md);
+      color: var(--ink);
+    }
+
+    .alert-ok {
+      display: none;
+      background: rgba(92, 102, 69, 0.1);
+      border: 1px solid var(--olive-lt);
+      padding: 0.8rem 1rem;
+      font-size: 0.75rem;
+      color: var(--olive);
+      margin-top: 0.8rem;
+      font-weight: 300;
+    }
+
+    /* Nav override for dark hero */
+    .nav-scrolled-force { background: rgba(240, 235, 226, 0.94); backdrop-filter: blur(16px); padding: 1rem 3rem !important; border-bottom: 1px solid rgba(164, 148, 128, 0.25); }
+
+    @media (max-width: 640px) {
+      .form-row.triple { grid-template-columns: 1fr 1fr; }
+      .toggle-grid { grid-template-columns: repeat(auto-fill, minmax(110px,1fr)); }
+      .budget-total-value { font-size: 2rem; }
+      .calc-hero::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="../../assets/images/Logo Main White.png" alt="Constroleum" class="nav-logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="../#services">Services</a></li>
+    <li><a href="../#process">Process</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../#faq">FAQ</a></li>
+    <li><a href="./index.html" style="color:var(--terra)">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+  </ul>
+  <a href="../#contact" class="nav-cta-btn">Free assessment</a>
+  <a href="../../" class="nav-lang-btn" aria-label="Language">🌐 Language</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="calc-hero">
+  <div class="calc-hero-inner">
+    <p class="eyebrow">Estimation tool · Budapest</p>
+    <h1>
+      Calculate your <em>budget</em><br>
+      instantly
+    </h1>
+    <p>Select the items for your project and get an indicative estimate. Prices based on the Hungarian construction market.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN GRID ═══ -->
+<div class="calc-wrapper">
+
+  <!-- ── LEFT: FORM ── -->
+  <div>
+
+    <!-- 1: Property details -->
+    <div class="calc-section">
+      <div class="calc-section-header">
+        <div class="calc-section-num">1</div>
+        <div class="calc-section-title">Property details</div>
+      </div>
+      <div class="calc-section-body">
+        <div class="form-row">
+          <div class="field">
+            <label>Total area</label>
+            <div class="slider-display" id="m2Display">75 <span>m²</span></div>
+            <input type="range" id="m2Slider" min="20" max="500" value="75" step="5" oninput="updateSlider()">
+          </div>
+          <div class="field">
+            <label>Intervention type</label>
+            <select id="tipoObra" onchange="calcular()">
+              <option value="reform">Partial renovation</option>
+              <option value="integral">Full renovation</option>
+              <option value="new">New construction</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row triple">
+          <div class="field">
+            <label>Bedrooms</label>
+            <input type="number" id="habitaciones" min="0" max="10" value="2" oninput="calcular()">
+          </div>
+          <div class="field">
+            <label>Baños</label>
+            <input type="number" id="banos" min="0" max="5" value="1" oninput="calcular()">
+          </div>
+          <div class="field">
+            <label>Floors</label>
+            <input type="number" id="plantas" min="1" max="4" value="1" oninput="calcular()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2: Demolición -->
+    <div class="calc-section">
+      <div class="calc-section-header">
+        <div class="calc-section-num">2</div>
+        <div class="calc-section-title">Demolition Demolición y estructuraamp; structure</div>
+      </div>
+      <div class="calc-section-body">
+        <div class="toggle-grid">
+          <div class="toggle-card" id="tog_derribo" onclick="toggleItem('derribo')">
+            <span class="toggle-icon">🔨</span>
+            <div class="toggle-label">Partition demolition</div>
+            <div class="toggle-price">~8.000 Ft/m</div>
+          </div>
+          <div class="toggle-card" id="tog_pavimento_ret" onclick="toggleItem('pavimento_ret')">
+            <span class="toggle-icon">🪵</span>
+            <div class="toggle-label">Floor removal</div>
+            <div class="toggle-price">~2.500 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_falso_techo_ret" onclick="toggleItem('falso_techo_ret')">
+            <span class="toggle-icon">⬛</span>
+            <div class="toggle-label">Ceiling removal</div>
+            <div class="toggle-price">~3.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_escombros" onclick="toggleItem('escombros')">
+            <span class="toggle-icon">🚛</span>
+            <div class="toggle-label">Rubble disposal</div>
+            <div class="toggle-price">~1.500 Ft/m²</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3: Installations -->
+    <div class="calc-section">
+      <div class="calc-section-header">
+        <div class="calc-section-num">3</div>
+        <div class="calc-section-title">Installations</div>
+      </div>
+      <div class="calc-section-body">
+        <div class="toggle-grid">
+          <div class="toggle-card" id="tog_electrica" onclick="toggleItem('electrica')">
+            <span class="toggle-icon">⚡</span>
+            <div class="toggle-label">Electrical system</div>
+            <div class="toggle-price">~12.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_fontaneria" onclick="toggleItem('fontaneria')">
+            <span class="toggle-icon">🔧</span>
+            <div class="toggle-label">Plumbing</div>
+            <div class="toggle-price">~15.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_calefaccion" onclick="toggleItem('calefaccion')">
+            <span class="toggle-icon">🔥</span>
+            <div class="toggle-label">Heating</div>
+            <div class="toggle-price">~18.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_clima" onclick="toggleItem('clima')">
+            <span class="toggle-icon">❄️</span>
+            <div class="toggle-label">Air conditioning</div>
+            <div class="toggle-price">~8.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_gas" onclick="toggleItem('gas')">
+            <span class="toggle-icon">🌡️</span>
+            <div class="toggle-label">Gas / boiler</div>
+            <div class="toggle-price">~350.000 Ft</div>
+          </div>
+          <div class="toggle-card" id="tog_solar" onclick="toggleItem('solar')">
+            <span class="toggle-icon">☀️</span>
+            <div class="toggle-label">Solar panels</div>
+            <div class="toggle-price">~800.000 Ft</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4: Revestimientos -->
+    <div class="calc-section">
+      <div class="calc-section-header">
+        <div class="calc-section-num">4</div>
+        <div class="calc-section-title">Finishes Revestimientos y acabadosamp; cladding</div>
+      </div>
+      <div class="calc-section-body">
+        <div class="form-row">
+          <div class="field">
+            <label>Finish quality</label>
+            <select id="calidadAcabados" onchange="calcular()">
+              <option value="econ">Economy</option>
+              <option value="med" selected>Mid-range</option>
+              <option value="prem">Premium</option>
+              <option value="lux">Luxury</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Floor type</label>
+            <select id="pavimento" onchange="calcular()">
+              <option value="none">— Not included —</option>
+              <option value="lam" selected>Laminate / PVC</option>
+              <option value="gres">Porcelain stoneware</option>
+              <option value="parquet">Wood parquet</option>
+              <option value="marmol">Marble / stone</option>
+            </select>
+          </div>
+        </div>
+        <div class="toggle-grid">
+          <div class="toggle-card active" id="tog_pintura" onclick="toggleItem('pintura')">
+            <span class="toggle-icon">🖌️</span>
+            <div class="toggle-label">Wall painting</div>
+            <div class="toggle-price">~3.500 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_azulejo" onclick="toggleItem('azulejo')">
+            <span class="toggle-icon">🔲</span>
+            <div class="toggle-label">Bathroom tiling</div>
+            <div class="toggle-price">~18.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_falso_techo" onclick="toggleItem('falso_techo')">
+            <span class="toggle-icon">🏗️</span>
+            <div class="toggle-label">False ceiling</div>
+            <div class="toggle-price">~8.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_tabiqueria" onclick="toggleItem('tabiqueria')">
+            <span class="toggle-icon">🧱</span>
+            <div class="toggle-label">New partitions</div>
+            <div class="toggle-price">~12.000 Ft/m</div>
+          </div>
+          <div class="toggle-card" id="tog_aislamiento" onclick="toggleItem('aislamiento')">
+            <span class="toggle-icon">🧊</span>
+            <div class="toggle-label">Insulation</div>
+            <div class="toggle-price">~9.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_ventanas" onclick="toggleItem('ventanas')">
+            <span class="toggle-icon">🪟</span>
+            <div class="toggle-label">PVC windows</div>
+            <div class="toggle-price">~80.000 Ft/ud</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5: Cocina -->
+    <div class="calc-section">
+      <div class="calc-section-header">
+        <div class="calc-section-num">5</div>
+        <div class="calc-section-title">Cocina</div>
+      </div>
+      <div class="calc-section-body">
+        <div class="form-row">
+          <div class="field">
+            <label>Kitchen renovation</label>
+            <select id="cocina" onchange="calcular()">
+              <option value="none">— Not included —</option>
+              <option value="basic">Basic (fittings only)</option>
+              <option value="med">Full with cabinets</option>
+              <option value="prem">Premium with appliances</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Kitchen m²</label>
+            <input type="number" id="m2Cocina" min="4" max="40" value="10" oninput="calcular()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6: Baño -->
+    <div class="calc-section">
+      <div class="calc-section-header">
+        <div class="calc-section-num">6</div>
+        <div class="calc-section-title">Bathroom(s)</div>
+      </div>
+      <div class="calc-section-body">
+        <div class="form-row">
+          <div class="field">
+            <label>Bathroom renovation</label>
+            <select id="bano_tipo" onchange="calcular()">
+              <option value="none">— Not included —</option>
+              <option value="basic">Basic (sanitary ware)</option>
+              <option value="med" selected>Full with tiling</option>
+              <option value="prem">Premium (spa / hydromassage)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>m² per bathroom</label>
+            <input type="number" id="m2Bano" min="2" max="20" value="6" oninput="calcular()">
+          </div>
+        </div>
+        <div class="extras-grid">
+          <div class="extra-item" id="ex_banera" onclick="toggleExtra('banera')">
+            <span class="extra-icon">🛁</span>
+            <div class="extra-label">Bañera</div>
+            <div class="extra-price">+120.000 Ft</div>
+          </div>
+          <div class="extra-item" id="ex_ducha" onclick="toggleExtra('ducha')">
+            <span class="extra-icon">🚿</span>
+            <div class="extra-label">Shower tray</div>
+            <div class="extra-price">+80.000 Ft</div>
+          </div>
+          <div class="extra-item" id="ex_inodoro" onclick="toggleExtra('inodoro')">
+            <span class="extra-icon">🚽</span>
+            <div class="extra-label">Inodoro</div>
+            <div class="extra-price">+45.000 Ft</div>
+          </div>
+          <div class="extra-item" id="ex_lavabo" onclick="toggleExtra('lavabo')">
+            <span class="extra-icon">🪣</span>
+            <div class="extra-label">Vanity unit</div>
+            <div class="extra-price">+65.000 Ft</div>
+          </div>
+          <div class="extra-item" id="ex_espejo" onclick="toggleExtra('espejo')">
+            <span class="extra-icon">🪞</span>
+            <div class="extra-label">Mirror/cabinet</div>
+            <div class="extra-price">+30.000 Ft</div>
+          </div>
+          <div class="extra-item" id="ex_toallero" onclick="toggleExtra('toallero')">
+            <span class="extra-icon">🔆</span>
+            <div class="extra-label">Electric towel rail</div>
+            <div class="extra-price">+25.000 Ft</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7: Carpentry Carpintería y extrasamp; extras -->
+    <div class="calc-section">
+      <div class="calc-section-header">
+        <div class="calc-section-num">7</div>
+        <div class="calc-section-title">Carpentry Carpintería y extrasamp; extras</div>
+      </div>
+      <div class="calc-section-body">
+        <div class="toggle-grid">
+          <div class="toggle-card" id="tog_puertas" onclick="toggleItem('puertas')">
+            <span class="toggle-icon">🚪</span>
+            <div class="toggle-label">Interior doors</div>
+            <div class="toggle-price">~55.000 Ft/ud</div>
+          </div>
+          <div class="toggle-card" id="tog_armarios" onclick="toggleItem('armarios')">
+            <span class="toggle-icon">🗄️</span>
+            <div class="toggle-label">Built-in wardrobes</div>
+            <div class="toggle-price">~90.000 Ft/ud</div>
+          </div>
+          <div class="toggle-card" id="tog_escalera" onclick="toggleItem('escalera')">
+            <span class="toggle-icon">🪜</span>
+            <div class="toggle-label">Escalera</div>
+            <div class="toggle-price">~600.000 Ft</div>
+          </div>
+          <div class="toggle-card" id="tog_terraza" onclick="toggleItem('terraza')">
+            <span class="toggle-icon">🌿</span>
+            <div class="toggle-label">Terrace / balcony</div>
+            <div class="toggle-price">~25.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_sotano" onclick="toggleItem('sotano')">
+            <span class="toggle-icon">🏚️</span>
+            <div class="toggle-label">Basement / garage</div>
+            <div class="toggle-price">~35.000 Ft/m²</div>
+          </div>
+          <div class="toggle-card" id="tog_iluminacion" onclick="toggleItem('iluminacion')">
+            <span class="toggle-icon">💡</span>
+            <div class="toggle-label">Design lighting</div>
+            <div class="toggle-price">~8.000 Ft/m²</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-note">
+      ℹ️ Indicative prices based on the Hungarian market. A formal quote is provided after a free on-site technical visit.
+    </div>
+
+  </div><!-- /form col -->
+
+  <!-- ── RIGHT: SIDEBAR ── -->
+  <div class="calc-sidebar">
+    <div class="budget-card">
+      <div class="budget-card-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <h2>Estimated budget</h2>
+      </div>
+      <div class="budget-body">
+
+        <div id="lineItems">
+          <div style="color:var(--ink-lt); font-size:0.78rem; font-weight:300; padding: 0.5rem 0;">Select items to see breakdown</div>
+        </div>
+
+        <div class="budget-divider"></div>
+
+        <div class="budget-subtotal">
+          <div class="budget-subtotal-label">Base cost</div>
+          <div class="budget-subtotal-value" id="costoBase">0 Ft</div>
+        </div>
+        <div class="budget-margin-row">
+          <div class="budget-margin-label">+ General expenses (20%)</div>
+          <div class="budget-margin-value" id="gastos">0 Ft</div>
+        </div>
+        <div class="budget-margin-row">
+          <div class="budget-margin-label">+ Company profit (25%)</div>
+          <div class="budget-margin-value" id="beneficio">0 Ft</div>
+        </div>
+
+        <div class="budget-total-box">
+          <div class="budget-total-label">Estimated total (ex. VAT)</div>
+          <div class="budget-total-value">
+            <span class="budget-total-currency" id="currencySymbol"></span><span id="totalValue">0</span>
+          </div>
+          <div class="budget-total-note" id="totalNote">Select items to calculate</div>
+        </div>
+
+        <div class="budget-vat-row">
+          <div class="budget-vat-label">+ VAT 27% (Hungary)</div>
+          <div class="budget-vat-value" id="ivaValue">0 Ft</div>
+        </div>
+        <div class="budget-vat-row total-iva">
+          <div class="budget-vat-label bold">TOTAL WITH VAT</div>
+          <div class="budget-vat-value bold" id="totalConIva">0 Ft</div>
+        </div>
+
+        <div class="currency-toggle">
+          <button onclick="setCurrency('HUF')" id="btnHUF" class="cur-btn active">HUF (Ft)</button>
+          <button onclick="setCurrency('EUR')" id="btnEUR" class="cur-btn">EUR (€)</button>
+        </div>
+
+        <button class="calc-cta-btn" onclick="solicitarPresupuesto()">
+          Request formal quote
+        </button>
+        <button class="calc-cta-btn secondary" onclick="window.print()">
+          Print / Save PDF
+        </button>
+
+        <div class="alert-ok" id="alertOk">
+          ✓ Request sent! We will contact you within 24h.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- /calc-wrapper -->
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <img src="../../assets/images/logo-icon.png" alt="Constroleum" class="footer-logo">
+    <span class="footer-copy">© 2025 Constroleum · All rights reserved</span>
+    <address class="footer-addr">
+      Búza utca 2 · 1033 Budapest<br>
+      <a href="tel:+36308690578">+36 30 869 05 78</a>
+    </address>
+  </div>
+</footer>
+
+<script src="../../js/static.js"></script>
+<script>
+const PRECIOS = {
+  obra: {
+    reform:   { base: 35000 },
+    integral: { base: 65000 },
+    new:      { base: 120000 },
+  },
+  calidad: { econ: 0.7, med: 1.0, prem: 1.5, lux: 2.2 },
+  pavimento: { none: 0, lam: 6000, gres: 14000, parquet: 22000, marmol: 45000 },
+  items: {
+    derribo:         { label: '🔨 Partition demolition',        precio: 8000,   tipo: 'lineal' },
+    pavimento_ret:   { label: '🪵 Floor removal',          precio: 2500,   tipo: 'm2' },
+    falso_techo_ret: { label: '⬛ Ceiling removal',        precio: 3000,   tipo: 'm2' },
+    escombros:       { label: '🚛 Rubble disposal',       precio: 1500,   tipo: 'm2' },
+    electrica:       { label: '⚡ Electrical system',   precio: 12000,  tipo: 'm2' },
+    fontaneria:      { label: '🔧 Plumbing',              precio: 15000,  tipo: 'm2' },
+    calefaccion:     { label: '🔥 Heating',             precio: 18000,  tipo: 'm2' },
+    clima:           { label: '❄️ Air conditioning',           precio: 8000,   tipo: 'm2' },
+    gas:             { label: '🌡️ Gas / boiler',          precio: 350000, tipo: 'fijo' },
+    solar:           { label: '☀️ Solar panels',          precio: 800000, tipo: 'fijo' },
+    pintura:         { label: '🖌️ Wall painting',         precio: 3500,   tipo: 'm2' },
+    azulejo:         { label: '🔲 Bathroom tiling',          precio: 18000,  tipo: 'm2_bano' },
+    falso_techo:     { label: '🏗️ False ceiling',            precio: 8000,   tipo: 'm2' },
+    tabiqueria:      { label: '🧱 New partitions',        precio: 12000,  tipo: 'lineal' },
+    aislamiento:     { label: '🧊 Insulation',             precio: 9000,   tipo: 'm2' },
+    ventanas:        { label: '🪟 PVC windows',            precio: 80000,  tipo: 'por_hab' },
+    puertas:         { label: '🚪 Interior doors',            precio: 55000,  tipo: 'por_hab' },
+    armarios:        { label: '🗄️ Built-in wardrobesdos',    precio: 90000,  tipo: 'por_hab' },
+    escalera:        { label: '🪜 Escalera',                precio: 600000, tipo: 'fijo' },
+    terraza:         { label: '🌿 Terrace / balcony',        precio: 25000,  tipo: 'm2_25pct' },
+    sotano:          { label: '🏚️ Basement / garage',        precio: 35000,  tipo: 'm2_25pct' },
+    iluminacion:     { label: '💡 Design lighting',      precio: 8000,   tipo: 'm2' },
+  },
+  cocina: { none: 0, basic: 300000, med: 900000, prem: 1800000 },
+  bano:   { none: 0, basic: 180000, med: 450000, prem: 900000 },
+  extras: { banera: 120000, ducha: 80000, inodoro: 45000, lavabo: 65000, espejo: 30000, toallero: 25000 },
+  gastos: 0.20, beneficio: 0.25, iva: 0.27,
+};
+
+let activeItems  = { pintura: true };
+let activeExtras = {};
+let currentCurrency = 'HUF';
+const EUR_RATE = 0.0026;
+
+function fmt(n) {
+  if (currentCurrency === 'EUR')
+    return (n * EUR_RATE).toLocaleString('es-ES', { maximumFractionDigits: 0 }) + ' €';
+  return n.toLocaleString('hu-HU') + ' Ft';
+}
+function disp(n) {
+  if (currentCurrency === 'EUR')
+    return (n * EUR_RATE).toLocaleString('es-ES', { maximumFractionDigits: 0 });
+  return n.toLocaleString('hu-HU');
+}
+
+function setCurrency(cur) {
+  currentCurrency = cur;
+  document.getElementById('btnHUF').classList.toggle('active', cur === 'HUF');
+  document.getElementById('btnEUR').classList.toggle('active', cur === 'EUR');
+  calcular();
+}
+
+function toggleItem(id) {
+  activeItems[id] = !activeItems[id];
+  document.getElementById('tog_' + id).classList.toggle('active', activeItems[id]);
+  calcular();
+}
+
+function toggleExtra(id) {
+  activeExtras[id] = !activeExtras[id];
+  document.getElementById('ex_' + id).classList.toggle('active', activeExtras[id]);
+  calcular();
+}
+
+function updateSlider() {
+  const v = document.getElementById('m2Slider').value;
+  document.getElementById('m2Display').innerHTML = v + ' <span>m²</span>';
+  calcular();
+}
+
+function calcular() {
+  const m2          = parseInt(document.getElementById('m2Slider').value);
+  const tipoObra    = document.getElementById('tipoObra').value;
+  const habitaciones= parseInt(document.getElementById('habitaciones').value) || 0;
+  const banos       = parseInt(document.getElementById('banos').value) || 0;
+  const calidadKey  = document.getElementById('calidadAcabados').value;
+  const pavKey      = document.getElementById('pavimento').value;
+  const cocinaKey   = document.getElementById('cocina').value;
+  const banoKey     = document.getElementById('bano_tipo').value;
+  const m2Bano      = parseInt(document.getElementById('m2Bano').value) || 6;
+  const calMult     = PRECIOS.calidad[calidadKey];
+  const m2Lineal    = Math.sqrt(m2) * 4 * 1.2;
+
+  let lines = [];
+  let total = 0;
+
+  const tipoLabel = tipoObra === 'reform' ? 'Partial renovation' : tipoObra === 'integral' ? 'Full renovation' : 'New construction';
+  const baseM2 = PRECIOS.obra[tipoObra].base * calMult * m2;
+  lines.push({ label: '🏗️ Base obra · ' + tipoLabel + ' × ' + m2 + 'm²', value: baseM2 });
+  total += baseM2;
+
+  if (pavKey !== 'none') {
+    const pv = PRECIOS.pavimento[pavKey] * m2;
+    lines.push({ label: '🪵 Pavimento × ' + m2 + 'm²', value: pv });
+    total += pv;
+  }
+
+  Object.keys(activeItems).forEach(id => {
+    if (!activeItems[id]) return;
+    const item = PRECIOS.items[id];
+    if (!item) return;
+    let v = 0;
+    if (item.tipo === 'm2')        v = item.precio * m2 * calMult;
+    if (item.tipo === 'm2_bano')   v = item.precio * m2Bano * banos * calMult;
+    if (item.tipo === 'm2_25pct')  v = item.precio * m2 * 0.25;
+    if (item.tipo === 'fijo')      v = item.precio;
+    if (item.tipo === 'lineal')    v = item.precio * m2Lineal;
+    if (item.tipo === 'por_hab')   v = item.precio * (habitaciones + 1);
+    lines.push({ label: item.label, value: v });
+    total += v;
+  });
+
+  if (cocinaKey !== 'none') {
+    const cv = PRECIOS.cocina[cocinaKey] * calMult;
+    const cl = cocinaKey === 'basic' ? 'Basic' : cocinaKey === 'med' ? 'Full' : 'Premium';
+    lines.push({ label: '🍳 Cocina · ' + cl, value: cv });
+    total += cv;
+  }
+
+  if (banoKey !== 'none' && banos > 0) {
+    const bv = PRECIOS.bano[banoKey] * calMult * banos;
+    const bl = banoKey === 'basic' ? 'Basic' : banoKey === 'med' ? 'Full' : 'Premium';
+    lines.push({ label: '🛁 Baño × ' + banos + ' · ' + bl, value: bv });
+    total += bv;
+  }
+
+  Object.keys(activeExtras).forEach(id => {
+    if (!activeExtras[id]) return;
+    const v = PRECIOS.extras[id] * banos;
+    const label = { banera:'Bañera', ducha:'Shower tray', inodoro:'Inodoro', lavabo:'Vanity unit', espejo:'Mirror/cabinet', toallero:'Electric towel rail' }[id] || id;
+    lines.push({ label: '  ↳ ' + label + ' × ' + banos, value: v });
+    total += v;
+  });
+
+  const gastos    = total * PRECIOS.gastos;
+  const beneficio = total * PRECIOS.beneficio;
+  const subtotal  = total + gastos + beneficio;
+  const iva       = subtotal * PRECIOS.iva;
+  const conIva    = subtotal + iva;
+  const sym       = currentCurrency === 'EUR' ? '€' : 'Ft';
+
+  const container = document.getElementById('lineItems');
+  container.innerHTML = lines.length === 0
+    ? '<div style="color:var(--ink-lt);font-size:0.78rem;font-weight:300;padding:0.5rem 0;">Select items to see breakdown</div>'
+    : lines.map(l => `<div class="budget-line"><div class="budget-line-label">${l.label}</div><div class="budget-line-value">${fmt(l.value)}</div></div>`).join('');
+
+  document.getElementById('costoBase').textContent  = disp(total) + ' ' + sym;
+  document.getElementById('gastos').textContent     = disp(gastos) + ' ' + sym;
+  document.getElementById('beneficio').textContent  = disp(beneficio) + ' ' + sym;
+  document.getElementById('totalValue').textContent = disp(subtotal);
+  document.getElementById('currencySymbol').textContent = currentCurrency === 'EUR' ? '€ ' : '';
+  document.getElementById('ivaValue').textContent   = disp(iva) + ' ' + sym;
+  document.getElementById('totalConIva').textContent = disp(conIva) + ' ' + sym;
+  document.getElementById('totalNote').textContent  = '≈ ' + disp(subtotal / m2) + ' ' + sym + '/m² · ' + m2 + ' m²';
+}
+
+function solicitarPresupuesto() {
+  const m2    = document.getElementById('m2Slider').value;
+  const tipo  = document.getElementById('tipoObra').value;
+  const total = document.getElementById('totalConIva').textContent;
+  const sub   = encodeURIComponent('Budget request Constroleum – ' + m2 + 'm² – ' + tipo);
+  const body  = encodeURIComponent('Hello,\n\nI would like to receive a formal quote for:\n- Area: ' + m2 + ' m²\n- Work type: ' + tipo + '\n- Indicative total: ' + total + '\n\nPlease contact me to arrange a technical visit.\n\nThank you.');
+  window.location.href = 'mailto:constroleum@gmail.com?subject=' + sub + '&body=' + body;
+  document.getElementById('alertOk').style.display = 'block';
+}
+
+// Force nav scrolled style (dark hero)
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('navbar');
+  if (nav) { nav.classList.add('scrolled'); }
+  setCurrency('HUF');
+  calcular();
+});
+</script>
+</body>
+</html>
