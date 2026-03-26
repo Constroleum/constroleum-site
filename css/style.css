@@ -65,32 +65,18 @@ body {
 }
 
 /* ─── LANG BAR ─── */
-.lang-bar {
-  position: fixed;
-  top: 0; right: 0;
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0.7rem 1.8rem;
-  mix-blend-mode: multiply;
-}
-
-.lang-btn {
-  background: none;
-  border: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
+.nav-lang-btn {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-lt);
-  cursor: pointer;
-  padding: 0.2rem 0.4rem;
-  transition: color 0.2s;
+  text-decoration: none;
+  color: var(--ink-md);
+  border: 1px solid var(--linen);
+  padding: 0.45rem 0.9rem;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
 }
-.lang-btn:hover, .lang-btn.active { color: var(--terra); }
-.lang-sep { font-size: 0.55rem; color: var(--linen); pointer-events: none; }
+.nav-lang-btn:hover { color: var(--terra); border-color: var(--terra); }
 
 /* ─── NAV ─── */
 nav {
@@ -896,7 +882,7 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   nav.scrolled { padding: 0.8rem 1.5rem; }
-  .nav-links, .nav-cta-btn { display: none; }
+  .nav-links, .nav-cta-btn, .nav-lang-btn { display: none; }
   .hamburger { display: flex; }
 
   nav.open {
@@ -917,6 +903,12 @@ footer {
     margin-top: 1rem;
     text-align: center;
     padding: 1rem;
+  }
+  nav.open .nav-lang-btn {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
+    padding: 0.8rem 1rem;
   }
 
   .hero-body { padding: 0 1.5rem 4rem; }
