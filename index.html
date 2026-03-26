@@ -576,40 +576,12 @@
       </div>
     </div>
 
-    <form class="contact-form" id="contact-form" novalidate>
-      <div class="fg">
-        <label for="cf-name" data-i18n="form_name">Név</label>
-        <input id="cf-name" name="from_name" type="text"
-               placeholder="Az Ön neve" required>
-      </div>
-      <div class="fg">
-        <label for="cf-email" data-i18n="form_email_label">Email</label>
-        <input id="cf-email" name="reply_to" type="email"
-               placeholder="email@cim.hu" required>
-      </div>
-      <div class="fg">
-        <label for="cf-phone">Telefon / WhatsApp</label>
-        <input id="cf-phone" name="phone" type="tel" placeholder="+36 …">
-      </div>
-      <div class="fg">
-        <label for="service-select" data-i18n="form_service">Érdeklődési terület</label>
-        <select id="service-select" name="service"></select>
-      </div>
-      <div class="fg fg-full">
-        <label for="cf-location">Ingatlan helyszíne / kerület</label>
-        <input id="cf-location" name="location" type="text" placeholder="pl. Budapest VII. kerület">
-      </div>
-      <div class="fg fg-full">
-        <label for="cf-msg" data-i18n="form_message">Üzenet</label>
-        <textarea id="cf-msg" name="message"
-                  placeholder="Írja le röviden a projektet: ingatlan típusa, m², tervezett munkák…" required></textarea>
-      </div>
-      <div id="form-status" class="form-status" aria-live="polite"></div>
-      <button type="submit" class="btn-fill btn-submit" data-i18n="form_send">
-        <span class="btn-label">Üzenet küldése</span>
-        <span class="btn-spinner" hidden>···</span>
-      </button>
-    </form>
+    <div class="contact-cta">
+      <p class="contact-cta-text" data-i18n="contact_cta_text">Keressen minket bizalommal — munkanapokon gyorsan válaszolunk.</p>
+      <a href="tel:+36308690578" class="btn-fill contact-cta-btn">
+        <span class="btn-label">Hívjon most</span>
+      </a>
+    </div>
   </div>
 </section>
 

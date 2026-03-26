@@ -726,16 +726,61 @@ nav.scrolled {
 
 .contact-body {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
   align-items: start;
 }
 
 .contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: contents;
 }
+
+/* Each ci-item becomes a card */
+.ci-item {
+  background: var(--bone);
+  padding: 2rem;
+  border-top: 2px solid var(--linen);
+  transition: border-color 0.2s;
+}
+
+.ci-item:hover { border-color: var(--terra); }
+
+/* CTA block below the info cards */
+.contact-cta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bone);
+  border-left: 3px solid var(--terra);
+  padding: 2rem 2.5rem;
+  gap: 2rem;
+}
+
+.contact-cta-text {
+  font-size: 0.9rem;
+  color: var(--ink-md);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-cta-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: var(--terra);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.contact-cta-btn:hover { background: var(--olive); }
 
 .ci-label {
   display: block;
@@ -772,60 +817,7 @@ nav.scrolled {
 }
 .ci-social a:hover { color: var(--terra); border-color: var(--terra); }
 
-/* Form */
-.contact-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem 1.5rem;
-}
 
-.fg {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.fg-full { grid-column: 1 / -1; }
-
-.fg label {
-  font-size: 0.55rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-lt);
-}
-
-.fg input,
-.fg select,
-.fg textarea {
-  background: var(--bone);
-  border: 1px solid rgba(164,148,128,0.35);
-  border-bottom: 2px solid rgba(164,148,128,0.35);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 300;
-  padding: 0.85rem 1rem;
-  outline: none;
-  transition: border-color 0.25s;
-  -webkit-appearance: none;
-}
-
-.fg input:focus,
-.fg select:focus,
-.fg textarea:focus {
-  border-bottom-color: var(--terra);
-  background: var(--white);
-}
-
-.fg select option { background: var(--bone); color: var(--ink); }
-.fg textarea { min-height: 120px; resize: vertical; }
-
-.contact-form .btn-fill {
-  grid-column: 1 / -1;
-  justify-self: start;
-  margin-top: 0.5rem;
-  background: var(--terra);
-}
 
 /* ═══════════════════════════
    FOOTER
@@ -936,8 +928,8 @@ footer {
   .intro-divider { width: 60%; height: 1px; }
 
   .contact { padding: 4rem 1.5rem; }
-  .contact-body { grid-template-columns: 1fr; gap: 3rem; }
-  .contact-form { grid-template-columns: 1fr; }
+  .contact-body { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .contact-cta { flex-direction: column; align-items: flex-start; }
 
   .moodboard { grid-template-columns: 1fr; grid-template-rows: 280px 200px; }
   .mb-col { flex-direction: row; }
@@ -957,6 +949,7 @@ footer {
   .moodboard { grid-template-columns: 1fr; grid-template-rows: auto; }
   .mb-col { flex-direction: column; }
   .mb-item { min-height: 220px; }
+  .contact-body { grid-template-columns: 1fr; }
 }
 
 /* ═══════════════════════════
