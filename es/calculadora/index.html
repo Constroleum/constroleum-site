@@ -1089,7 +1089,6 @@ function calcular() {
     ? '<div style="color:var(--ink-lt);font-size:0.78rem;font-weight:300;padding:0.5rem 0;">Selecciona partidas para ver el desglose</div>'
     : lines.map(l => `<div class="budget-line"><div class="budget-line-label">${l.label}</div><div class="budget-line-value">${fmt(l.value)}</div></div>`).join('');
 
-  document.getElementById('costoBase').textContent  = disp(total) + ' ' + sym;
   document.getElementById('totalValue').textContent = disp(total);
   document.getElementById('currencySymbol').textContent = currentCurrency === 'EUR' ? '€ ' : '';
   document.getElementById('ivaValue').textContent   = disp(iva) + ' ' + sym;

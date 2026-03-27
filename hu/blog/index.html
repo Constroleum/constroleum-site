@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Constroleum Budapest | Felújítás, befektetés és építkezés</title>
+  <meta name="description" content="Cikkek teljes felújításról, építkezésről, ingatlanpiaci befektetésről és budapesti életről. Gyakorlati útmutatók a Constroleum-tól.">
+  <link rel="canonical" href="https://www.constroleum.hu/hu/blog/">
+  <link rel="alternate" hreflang="es" href="https://www.constroleum.hu/es/blog/">
+  <link rel="alternate" hreflang="en" href="https://www.constroleum.hu/en/blog/">
+  <link rel="alternate" hreflang="hu" href="https://www.constroleum.hu/hu/blog/">
+  <link rel="icon" type="image/png" href="../../assets/images/Favicon Purple.png">
+  <link rel="apple-touch-icon" href="../../assets/images/Favicon Purple.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+<style>
+body { overflow-x: hidden; background: var(--bone); }
+
+.blog-hero {
+  padding: 7rem 3rem 3.5rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.blog-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.blog-hero .eyebrow { color: var(--terra-lt); }
+.blog-hero .eyebrow::before { background: var(--terra-lt); }
+.blog-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.blog-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.blog-hero .hero-sub {
+  color: rgba(250,247,243,0.55);
+  font-size: 0.88rem;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+.blog-grid-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 3rem 6rem;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } .blog-grid-wrap { padding: 2.5rem 1.5rem 4rem; } }
+
+.blog-card {
+  background: var(--white);
+  border: 1px solid var(--linen);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(42,33,24,0.10);
+  border-color: var(--terra-lt);
+}
+.blog-card-tag {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--terra);
+  color: var(--white);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  font-weight: 500;
+}
+.blog-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) brightness(0.92);
+  transition: filter 0.3s;
+}
+.blog-card:hover .blog-card-img { filter: saturate(1) brightness(1); }
+.blog-card-body { padding: 1.4rem 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+.blog-card-meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  margin-bottom: 0.7rem;
+}
+.blog-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+.blog-card-excerpt {
+  font-size: 0.8rem;
+  color: var(--ink-md);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.blog-card-cta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-card-cta::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+.blog-card:hover .blog-card-cta::after { transform: translateX(4px); }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="../../assets/images/Logo Main White.png" alt="Constroleum" class="nav-logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="../#szolgaltatasok">Szolgáltatások</a></li>
+    <li><a href="../#folyamat">Folyamat</a></li>
+    <li><a href="../#rolunk">Rólunk</a></li>
+    <li><a href="../#faq">FAQ</a></li>
+    <li><a href="./index.html" style="color:var(--terra)">Blog</a></li>
+    <li><a href="../kalkulator/">Kalkulátor</a></li>
+    <li><a href="../#kapcsolat">Kapcsolat</a></li>
+  </ul>
+  <a href="../#kapcsolat" class="nav-cta-btn">Ingyenes felmérés</a>
+  <a href="../../" class="nav-lang-btn" aria-label="Nyelv">🌐 Nyelv</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <p class="eyebrow">Tudástár · Budapest</p>
+    <h1>Blog az <em>építkezésről</em><br>és ingatlan-befektetésről</h1>
+    <p class="hero-sub">Gyakorlati útmutatók, valós árak és a budapesti ingatlanpiac elemzése külföldi befektetők és tulajdonosok számára.</p>
+  </div>
+</div>
+
+<div class="blog-grid-wrap">
+  <div class="blog-grid">
+
+    <a href="epulet-felujitas-budapest/" class="blog-card">
+      <span class="blog-card-tag">Felújítás</span>
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Épületfelújítás Budapesten: teljes útmutató tulajdonosoknak és befektetőknek" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. január · 8 perc olvasás</div>
+        <div class="blog-card-title">Épületfelújítás Budapesten: teljes útmutató tulajdonosoknak és befektetőknek</div>
+        <div class="blog-card-excerpt">Minden, amit tudni kell a magyarországi teljes körű felújítás határideiről, költségeiről és jogi követelményeiről.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="lakasvasarlas-budapest-kulfoldiként/" class="blog-card">
+      <span class="blog-card-tag">Befektetés</span>
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Lakásvásárlás Budapesten külföldiként: amit tudni kell befektetés előtt" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. január · 9 perc olvasás</div>
+        <div class="blog-card-title">Lakásvásárlás Budapesten külföldiként: amit tudni kell befektetés előtt</div>
+        <div class="blog-card-excerpt">Vásárlási folyamat, adók, korlátozások és értékesítési stratégia nem belföldi befektetők számára Magyarországon.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="teljes-felujitas-budapest/" class="blog-card">
+      <span class="blog-card-tag">Felújítás</span>
+      <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Teljes körű felújítás Budapesten: folyamat, valós költségek és távolból való irányítás" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. február · 7 perc olvasás</div>
+        <div class="blog-card-title">Teljes körű felújítás Budapesten: folyamat, valós költségek és távolból való irányítás</div>
+        <div class="blog-card-excerpt">Miért választják egyre több külföldi befektető Budapestet — és hogyan kezeljük a felújítást távolról meglepetések nélkül.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="felujitas-koltsegek-budapest-2025/" class="blog-card">
+      <span class="blog-card-tag">Árak</span>
+      <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=800&q=80" alt="Mennyibe kerül egy lakás felújítása Budapesten 2025-ben?" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. február · 6 perc olvasás</div>
+        <div class="blog-card-title">Mennyibe kerül egy lakás felújítása Budapesten 2025-ben? Valós árak szakmánként</div>
+        <div class="blog-card-excerpt">Őszinte költséglebontás szakmánként: bontás, gépészet, burkolatok, konyha és fürdőszoba. Apró betűs rész nélkül.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="uj-epites-budapest/" class="blog-card">
+      <span class="blog-card-tag">Új építés</span>
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Új építés Budapesten: engedélyek, határidők és teljes projektmenedzsment" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. március · 8 perc olvasás</div>
+        <div class="blog-card-title">Új építés Budapesten: engedélyek, határidők és teljes projektmenedzsment</div>
+        <div class="blog-card-excerpt">Teljes útmutató az alapoktól való építkezéshez Magyarországon: szabályozás, engedélyek, költségek és integrált irányítás.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="ingatlan-befektetes-budapest/" class="blog-card">
+      <span class="blog-card-tag">Befektetés</span>
+      <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&q=80" alt="Teljes útmutató a budapesti ingatlanpiacra való befektetéshez 2025-ben" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. március · 10 perc olvasás</div>
+        <div class="blog-card-title">Teljes útmutató a budapesti ingatlanpiacra való befektetéshez 2025-ben</div>
+        <div class="blog-card-excerpt">Piacelemzés, a legnagyobb potenciállal rendelkező kerületek, hasznosítási stratégiák és a leggyakoribb hibák.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="mi-az-a-generalkivitelezo/" class="blog-card">
+      <span class="blog-card-tag">Útmutatók</span>
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="Mi az a generálkivitelező? Az integrált építési vezető szerepe Magyarországon" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. április · 6 perc olvasás</div>
+        <div class="blog-card-title">Mi az a generálkivitelező? Az integrált építési vezető szerepe Magyarországon</div>
+        <div class="blog-card-excerpt">A generálkivitelező kulcsfigura a magyar építőiparban. Elmagyarázzuk, mit csinál, mit nem, és miért nélkülözhetetlen.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="epitesi-engedelyek-budapest/" class="blog-card">
+      <span class="blog-card-tag">Útmutatók</span>
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Építési engedélyek Budapesten: gyakorlati útmutató külföldi tulajdonosoknak" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. április · 7 perc olvasás</div>
+        <div class="blog-card-title">Építési engedélyek Budapesten: gyakorlati útmutató külföldi tulajdonosoknak</div>
+        <div class="blog-card-excerpt">Milyen engedélyekre van szükség, mennyi ideig tartanak, mennyibe kerülnek, és hogyan intézhetők magyartudás nélkül.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="zsidó-negyed-budapest-befektes/" class="blog-card">
+      <span class="blog-card-tag">Kerületek</span>
+      <img src="https://images.unsplash.com/photo-1541981000-aac95b5ef0e3?w=800&q=80" alt="Befektetés a budapesti Zsidó negyedbe (VII. kerület): lehetőségek és valós hozamok" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. május · 7 perc olvasás</div>
+        <div class="blog-card-title">Befektetés a budapesti Zsidó negyedbe (VII. kerület): lehetőségek, kockázatok és valós hozamok</div>
+        <div class="blog-card-excerpt">A VII. kerület a legturistásabb és a rövid távú bérbeadásban legkeresettebb. Őszinte elemzés az előnyökről, korlátokról és jövedelmezőségről.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+    <a href="felujitas-folyamata-lepesrol-lepesre/" class="blog-card">
+      <span class="blog-card-tag">Útmutatók</span>
+      <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=800&q=80" alt="Hogyan zajlik egy teljes körű felújítás Budapesten: lépésről lépésre" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">2025. május · 8 perc olvasás</div>
+        <div class="blog-card-title">Hogyan zajlik egy teljes körű felújítás Budapesten: lépésről lépésre</div>
+        <div class="blog-card-excerpt">Az első helyszíni bejárástól a kulcsátadásig: minden, ami egy Constroleum által kezelt teljes körű felújítás során történik.</div>
+        <div class="blog-card-cta">Cikk olvasása</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="../../assets/images/logo-icon.png" alt="Constroleum" class="footer-logo">
+    <span class="footer-copy">© 2025 Constroleum · Minden jog fenntartva</span>
+    <address class="footer-addr">
+      Búza utca 2 · 1033 Budapest<br>
+      <a href="tel:+36308690578">+36 30 869 05 78</a>
+    </address>
+  </div>
+</footer>
+<script src="../../js/static.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('navbar');
+  if (nav) nav.classList.add('scrolled');
+});
+</script>
+</body>
+</html>

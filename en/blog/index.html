@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Constroleum Budapest | Renovation, Investment &amp; Construction</title>
+  <meta name="description" content="Articles about full renovations, construction, real estate investment and living in Budapest. Practical guides by Constroleum.">
+  <link rel="canonical" href="https://www.constroleum.hu/en/blog/">
+  <link rel="alternate" hreflang="es" href="https://www.constroleum.hu/es/blog/">
+  <link rel="alternate" hreflang="en" href="https://www.constroleum.hu/en/blog/">
+  <link rel="icon" type="image/png" href="../../assets/images/Favicon Purple.png">
+  <link rel="apple-touch-icon" href="../../assets/images/Favicon Purple.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+<style>
+body { overflow-x: hidden; background: var(--bone); }
+
+.blog-hero {
+  padding: 7rem 3rem 3.5rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.blog-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.blog-hero .eyebrow { color: var(--terra-lt); }
+.blog-hero .eyebrow::before { background: var(--terra-lt); }
+.blog-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.blog-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.blog-hero .hero-sub {
+  color: rgba(250,247,243,0.55);
+  font-size: 0.88rem;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+.blog-grid-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 3rem 6rem;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } .blog-grid-wrap { padding: 2.5rem 1.5rem 4rem; } }
+
+.blog-card {
+  background: var(--white);
+  border: 1px solid var(--linen);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(42,33,24,0.10);
+  border-color: var(--terra-lt);
+}
+.blog-card-tag {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--terra);
+  color: var(--white);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  font-weight: 500;
+}
+.blog-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) brightness(0.92);
+  transition: filter 0.3s;
+}
+.blog-card:hover .blog-card-img { filter: saturate(1) brightness(1); }
+.blog-card-body { padding: 1.4rem 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+.blog-card-meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  margin-bottom: 0.7rem;
+}
+.blog-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+.blog-card-excerpt {
+  font-size: 0.8rem;
+  color: var(--ink-md);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.blog-card-cta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-card-cta::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+.blog-card:hover .blog-card-cta::after { transform: translateX(4px); }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="../../assets/images/Logo Main White.png" alt="Constroleum" class="nav-logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="../#services">Services</a></li>
+    <li><a href="../#process">Process</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../#faq">FAQ</a></li>
+    <li><a href="./index.html" style="color:var(--terra)">Blog</a></li>
+    <li><a href="../calculator/">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+  </ul>
+  <a href="../#contact" class="nav-cta-btn">Free assessment</a>
+  <a href="../../" class="nav-lang-btn" aria-label="Language">🌐 Language</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <p class="eyebrow">Resources · Budapest</p>
+    <h1>Blog on <em>construction</em><br>and investment in Budapest</h1>
+    <p class="hero-sub">Practical guides, real prices and analysis of the Hungarian real estate market for foreign investors and property owners.</p>
+  </div>
+</div>
+
+<div class="blog-grid-wrap">
+  <div class="blog-grid">
+
+    <a href="building-rehabilitation-budapest/" class="blog-card">
+      <span class="blog-card-tag">Rehabilitation</span>
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Building rehabilitation in Budapest: complete guide for owners and investors" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">January 2025 · 8 min read</div>
+        <div class="blog-card-title">Building rehabilitation in Budapest: complete guide for owners and investors</div>
+        <div class="blog-card-excerpt">Everything you need to know about timelines, costs and legal requirements for full rehabilitation projects in Hungary.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="buying-apartment-budapest-foreigner/" class="blog-card">
+      <span class="blog-card-tag">Investment</span>
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Buying an apartment in Budapest as a foreigner: everything you need to know" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">January 2025 · 9 min read</div>
+        <div class="blog-card-title">Buying an apartment in Budapest as a foreigner: everything you need to know before investing</div>
+        <div class="blog-card-excerpt">Purchase process, taxes, restrictions and post-acquisition strategy for non-resident investors in Hungary.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="full-renovation-budapest/" class="blog-card">
+      <span class="blog-card-tag">Renovation</span>
+      <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Full renovation in Budapest: process, costs and project management" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">February 2025 · 7 min read</div>
+        <div class="blog-card-title">Full renovation in Budapest: process, real costs and remote project management</div>
+        <div class="blog-card-excerpt">Why more and more foreign investors choose Budapest — and how to manage a renovation from abroad without surprises.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="renovation-costs-budapest-2025/" class="blog-card">
+      <span class="blog-card-tag">Prices</span>
+      <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=800&q=80" alt="How much does it cost to renovate an apartment in Budapest in 2025?" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">February 2025 · 6 min read</div>
+        <div class="blog-card-title">How much does it cost to renovate an apartment in Budapest in 2025? Real prices by trade</div>
+        <div class="blog-card-excerpt">Honest breakdown of costs by trade: demolition, installations, finishes, kitchen and bathroom. No hidden fees.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="new-construction-budapest/" class="blog-card">
+      <span class="blog-card-tag">New build</span>
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="New construction in Budapest: permits, timelines and full project management" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">March 2025 · 8 min read</div>
+        <div class="blog-card-title">New construction in Budapest: permits, timelines and full project management</div>
+        <div class="blog-card-excerpt">Complete guide to building from scratch in Hungary: regulations, permits, costs and integrated management.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="investing-real-estate-budapest/" class="blog-card">
+      <span class="blog-card-tag">Investment</span>
+      <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&q=80" alt="Complete guide to investing in the Budapest real estate market in 2025" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">March 2025 · 10 min read</div>
+        <div class="blog-card-title">Complete guide to investing in the Budapest real estate market in 2025</div>
+        <div class="blog-card-excerpt">Market analysis, districts with the highest potential, monetisation strategies and the most common mistakes to avoid.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="what-is-generalkivitelező/" class="blog-card">
+      <span class="blog-card-tag">Guides</span>
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="What is a generálkivitelező? The general contractor figure in Hungary" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">April 2025 · 6 min read</div>
+        <div class="blog-card-title">What is a generálkivitelező? The general contractor figure in Hungary explained</div>
+        <div class="blog-card-excerpt">The generálkivitelező — integrated project manager — is key to Hungarian construction. We explain what they do, what they don't, and why they're indispensable.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="building-permits-budapest/" class="blog-card">
+      <span class="blog-card-tag">Guides</span>
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Building permits in Budapest: practical guide for foreign property owners" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">April 2025 · 7 min read</div>
+        <div class="blog-card-title">Building permits in Budapest: practical guide for foreign property owners</div>
+        <div class="blog-card-excerpt">Which permits you need, how long they take, what they cost and how to manage them without speaking Hungarian.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="jewish-district-budapest-invest/" class="blog-card">
+      <span class="blog-card-tag">Districts</span>
+      <img src="https://images.unsplash.com/photo-1541981000-aac95b5ef0e3?w=800&q=80" alt="Investing in the Jewish Quarter of Budapest (District VII): opportunities and real returns" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">May 2025 · 7 min read</div>
+        <div class="blog-card-title">Investing in the Jewish Quarter of Budapest (District VII): opportunities, risks and real returns</div>
+        <div class="blog-card-excerpt">District VII is the most touristic and most sought-after for short-term rentals. An honest analysis of its advantages, limitations and profitability.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+    <a href="renovation-process-step-by-step/" class="blog-card">
+      <span class="blog-card-tag">Guides</span>
+      <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=800&q=80" alt="How a full renovation works in Budapest: complete step-by-step process" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">May 2025 · 8 min read</div>
+        <div class="blog-card-title">How a full renovation works in Budapest: complete step-by-step process</div>
+        <div class="blog-card-excerpt">From the first site visit to key handover: everything that happens during a full renovation managed by Constroleum.</div>
+        <div class="blog-card-cta">Read article</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="../../assets/images/logo-icon.png" alt="Constroleum" class="footer-logo">
+    <span class="footer-copy">© 2025 Constroleum · All rights reserved</span>
+    <address class="footer-addr">
+      Búza utca 2 · 1033 Budapest<br>
+      <a href="tel:+36308690578">+36 30 869 05 78</a>
+    </address>
+  </div>
+</footer>
+<script src="../../js/static.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('navbar');
+  if (nav) nav.classList.add('scrolled');
+});
+</script>
+</body>
+</html>
