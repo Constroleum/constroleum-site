@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar un piso en Budapest siendo extranjero: todo lo que debes saber antes de invertir — Constroleum</title>
+  <meta name="description" content="Proceso de compra, impuestos, restricciones y estrategia post-adquisición para inversores no residentes en Hungría.">
+  <meta name="keywords" content="comprar piso Budapest extranjero, inversión inmobiliaria Budapest, buy apartment Budapest foreigner">
+  <link rel="canonical" href="https://www.constroleum.hu/es/blog/comprar-piso-budapest-extranjero/">
+  <link rel="icon" type="image/png" href="../../../assets/images/Favicon Purple.png">
+  <link rel="apple-touch-icon" href="../../../assets/images/Favicon Purple.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+<style>
+body { overflow-x: hidden; background: var(--bone); }
+
+/* ── Blog hero ── */
+.blog-hero {
+  padding: 7rem 3rem 3.5rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.blog-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.blog-hero .eyebrow { color: var(--terra-lt); }
+.blog-hero .eyebrow::before { background: var(--terra-lt); }
+.blog-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.blog-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.blog-hero .hero-sub {
+  color: rgba(250,247,243,0.55);
+  font-size: 0.88rem;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+/* ── Blog index grid ── */
+.blog-grid-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 3rem 6rem;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } .blog-grid-wrap { padding: 2.5rem 1.5rem 4rem; } }
+
+.blog-card {
+  background: var(--white);
+  border: 1px solid var(--linen);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(42,33,24,0.10);
+  border-color: var(--terra-lt);
+}
+.blog-card-tag {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--terra);
+  color: var(--white);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  font-weight: 500;
+}
+.blog-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) brightness(0.92);
+  transition: filter 0.3s;
+}
+.blog-card:hover .blog-card-img { filter: saturate(1) brightness(1); }
+.blog-card-body { padding: 1.4rem 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+.blog-card-meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  margin-bottom: 0.7rem;
+}
+.blog-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+.blog-card-excerpt {
+  font-size: 0.8rem;
+  color: var(--ink-md);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.blog-card-cta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-card-cta::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+.blog-card:hover .blog-card-cta::after { transform: translateX(4px); }
+
+/* ── Article page ── */
+.article-hero {
+  padding: 7rem 3rem 3rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.article-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.article-hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
+.article-hero .eyebrow { color: var(--terra-lt); }
+.article-hero .eyebrow::before { background: var(--terra-lt); }
+.article-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.article-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250,247,243,0.45);
+  flex-wrap: wrap;
+}
+.article-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+.article-body-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem 6rem;
+}
+@media (max-width: 640px) { .article-body-wrap { padding: 2.5rem 1.5rem 4rem; } .article-hero { padding: 6rem 1.5rem 2.5rem; } .blog-hero { padding: 6rem 1.5rem 2.5rem; } }
+
+.article-lead {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--linen);
+}
+
+.article-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 2.8rem 0 1rem;
+  line-height: 1.2;
+}
+.article-body h2 em { font-style: italic; color: var(--terra); }
+.article-body h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin: 2rem 0 0.8rem;
+}
+.article-body p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-md);
+  margin-bottom: 1.4rem;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+.article-body ul, .article-body ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+.article-body li {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink-md);
+  margin-bottom: 0.5rem;
+}
+.article-body li::marker { color: var(--terra); }
+
+.article-highlight {
+  background: var(--white);
+  border-left: 3px solid var(--terra);
+  padding: 1.4rem 1.6rem;
+  margin: 2rem 0;
+}
+.article-highlight p { margin: 0; font-style: italic; color: var(--ink); font-size: 1.02rem; }
+
+.article-cta-box {
+  background: var(--ink);
+  padding: 2.5rem;
+  margin-top: 3.5rem;
+  text-align: center;
+}
+.article-cta-box p {
+  color: rgba(250,247,243,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+.article-cta-box .eyebrow { justify-content: center; color: var(--terra-lt); margin-bottom: 0.8rem; }
+.article-cta-box .eyebrow::before { display: none; }
+.article-cta-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.btn-terra {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--white);
+  padding: 0.85rem 2.2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.22s;
+}
+.btn-terra:hover { background: var(--terra-dk); }
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--linen);
+  padding-top: 2rem;
+  margin-top: 3rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.article-nav a {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.2s;
+}
+.article-nav a:hover { gap: 0.8rem; }
+.article-nav .back::before { content: '←'; }
+.article-nav .next::after { content: '→'; }
+</style>
+  <style>
+    /* Article nav overrides for deeper path */
+    .article-hero, .article-body-wrap { max-width-inner: 780px; }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="../../../assets/images/Logo Main White.png" alt="Constroleum" class="nav-logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="../../#servicios">Servicios</a></li>
+    <li><a href="../../#proceso">Proceso</a></li>
+    <li><a href="../../#nosotros">Nosotros</a></li>
+    <li><a href="../index.html" style="color:var(--terra)">Blog</a></li>
+    <li><a href="../../calculadora/">Calculadora</a></li>
+    <li><a href="../../#contacto">Contacto</a></li>
+  </ul>
+  <a href="../../#contacto" class="nav-cta-btn">Consulta gratuita</a>
+  <a href="../../../" class="nav-lang-btn" aria-label="Idioma">🌐 Idioma</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <p class="eyebrow">Inversión · Enero 2025</p>
+    <h1>Comprar un piso en Budapest <em>siendo extranjero</em></h1>
+    <div class="article-meta">
+      <span>📅 Enero 2025</span>
+      <span>⏱ 9 min de lectura</span>
+      <span>📍 Budapest, Hungría</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body-wrap">
+  <p class="article-lead">Hungría permite a los ciudadanos de la Unión Europea comprar inmuebles residenciales sin restricciones. Para ciudadanos de fuera de la UE el proceso requiere una autorización adicional, pero sigue siendo accesible. En ambos casos, conocer el proceso con antelación marca la diferencia entre una inversión rentable y una llena de sorpresas.</p>
+  <div class="article-body">
+
+<h2>¿Pueden los extranjeros <em>comprar inmuebles</em> en Budapest?</h2>
+<p>Los ciudadanos de la Unión Europea, el Espacio Económico Europeo y Suiza pueden adquirir propiedades residenciales en Hungría en las mismas condiciones que los ciudadanos húngaros. Para ciudadanos de terceros países —incluidos los latinoamericanos— se requiere una autorización administrativa (<em>hatósági engedély</em>) que tarda entre 30 y 60 días hábiles en concederse y que se otorga prácticamente de forma automática para uso residencial.</p>
+<p>La compra de terrenos agrícolas está restringida para todos los extranjeros, pero no afecta a la adquisición de apartamentos o inmuebles urbanos.</p>
+
+<h2>El proceso de compra <em>paso a paso</em></h2>
+<h3>1. Búsqueda y oferta</h3>
+<p>El mercado inmobiliario húngaro opera principalmente a través de portales como <strong>Ingatlan.com</strong> y <strong>Duna House</strong>. Una vez localizado el inmueble, se formaliza una oferta con señal (<em>foglaló</em>), habitualmente del 10% del precio, que se pierde si el comprador desiste pero se duplica si desiste el vendedor.</p>
+
+<h3>2. Due diligence legal</h3>
+<p>Es imprescindible contratar a un abogado húngaro registrado (<em>ügyvéd</em>) para revisar el título de propiedad (<em>tulajdoni lap</em>), verificar que el inmueble no tiene cargas, hipotecas ni litigios pendientes, y comprobar la situación urbanística. El coste habitual es del 0,5–1% del precio de compra.</p>
+
+<h3>3. Contrato de compraventa</h3>
+<p>En Hungría, la compraventa debe formalizarse ante abogado (no notario). El contrato es vinculante una vez firmado y se inscribe en el Registro de la Propiedad (<em>Ingatlan-nyilvántartás</em>) en un plazo de 30 días. La escritura pública no es obligatoria pero sí recomendable.</p>
+
+<h3>4. Impuestos y gastos de compra</h3>
+<ul>
+  <li><strong>Impuesto de transmisiones (illeték)</strong>: 4% del valor del inmueble para uso residencial</li>
+  <li><strong>Honorarios de abogado</strong>: 0,5–1%</li>
+  <li><strong>Comisión inmobiliaria</strong>: 2–3% + IVA (habitualmente a cargo del vendedor)</li>
+  <li><strong>Registro de la propiedad</strong>: 6.600 HUF de tasa administrativa</li>
+</ul>
+<p>En total, los gastos de compra suponen aproximadamente un 5–6% del precio de adquisición.</p>
+
+<h2>Estrategia post-compra: <em>reforma y rentabilización</em></h2>
+<p>El modelo más habitual entre inversores hispanohablantes en Budapest es la compra de un inmueble en estado original o semi-rehabilitado, su reforma integral y posterior alquiler turístico o de larga duración. El retorno esperado en alquiler turístico (Airbnb, Booking) en el centro de Budapest oscila entre el 6% y el 10% bruto anual sobre el precio total de inversión (compra + reforma).</p>
+
+<div class="article-highlight"><p>"El precio medio por metro cuadrado en el VII y IX distrito de Budapest se sitúa entre 800.000 y 1.400.000 Ft/m². Una reforma de calidad puede añadir entre 300.000 y 600.000 Ft/m² de valor adicional."</p></div>
+
+<h2>Cómo puede ayudaros <em>Constroleum</em></h2>
+<p>Acompañamos a inversores extranjeros desde la evaluación del inmueble antes de la compra —estimando el coste de reforma y el retorno esperado— hasta la entrega de llaves tras la rehabilitación. Coordinamos con abogados de confianza, gestionamos todos los permisos y os mantenemos informados en español durante todo el proceso. No necesitas estar en Budapest para que tu inversión avance.</p>
+
+  </div>
+
+  <div class="article-cta-box">
+    <p class="eyebrow">¿Tienes un proyecto en Budapest?</p>
+    <h3>Cuéntanos tu proyecto.<br>La primera consulta es gratuita.</h3>
+    <p>Respondemos en menos de 24h en días laborables. Hablamos español.</p>
+    <a href="../../#contacto" class="btn-terra">Hablar con nosotros</a>
+  </div>
+
+  <div class="article-nav">
+    <a href="../rehabilitacion-edificios-budapest/index.html" class="back">Rehabilitación de edificios en Budapest: guía comp…</a>
+    <a href="../index.html" style="color:var(--ink-lt);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;">Ver todos</a>
+    <a href="../reforma-integral-budapest-hispanohablantes/index.html" class="next">Reforma integral en Budapest para hispanohablantes…</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="../../../assets/images/logo-icon.png" alt="Constroleum" class="footer-logo">
+    <span class="footer-copy">© 2025 Constroleum · Todos los derechos reservados</span>
+    <address class="footer-addr">
+      Búza utca 2 · 1033 Budapest<br>
+      <a href="tel:+36308690578">+36 30 869 05 78</a>
+    </address>
+  </div>
+</footer>
+<script src="../../../js/static.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('navbar');
+  if (nav) nav.classList.add('scrolled');
+});
+</script>
+</body>
+</html>

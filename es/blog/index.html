@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Constroleum Budapest | Reformas, inversión y construcción</title>
+  <meta name="description" content="Artículos sobre reforma integral, construcción, inversión inmobiliaria y vida en Budapest para hispanohablantes. Guías prácticas de Constroleum.">
+  <link rel="canonical" href="https://www.constroleum.hu/es/blog/">
+  <link rel="icon" type="image/png" href="../../assets/images/Favicon Purple.png">
+  <link rel="apple-touch-icon" href="../../assets/images/Favicon Purple.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+<style>
+body { overflow-x: hidden; background: var(--bone); }
+
+/* ── Blog hero ── */
+.blog-hero {
+  padding: 7rem 3rem 3.5rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.blog-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.blog-hero .eyebrow { color: var(--terra-lt); }
+.blog-hero .eyebrow::before { background: var(--terra-lt); }
+.blog-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.blog-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.blog-hero .hero-sub {
+  color: rgba(250,247,243,0.55);
+  font-size: 0.88rem;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+/* ── Blog index grid ── */
+.blog-grid-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 3rem 6rem;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } .blog-grid-wrap { padding: 2.5rem 1.5rem 4rem; } }
+
+.blog-card {
+  background: var(--white);
+  border: 1px solid var(--linen);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(42,33,24,0.10);
+  border-color: var(--terra-lt);
+}
+.blog-card-tag {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--terra);
+  color: var(--white);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  font-weight: 500;
+}
+.blog-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) brightness(0.92);
+  transition: filter 0.3s;
+}
+.blog-card:hover .blog-card-img { filter: saturate(1) brightness(1); }
+.blog-card-body { padding: 1.4rem 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+.blog-card-meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  margin-bottom: 0.7rem;
+}
+.blog-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+.blog-card-excerpt {
+  font-size: 0.8rem;
+  color: var(--ink-md);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.blog-card-cta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-card-cta::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+.blog-card:hover .blog-card-cta::after { transform: translateX(4px); }
+
+/* ── Article page ── */
+.article-hero {
+  padding: 7rem 3rem 3rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.article-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.article-hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
+.article-hero .eyebrow { color: var(--terra-lt); }
+.article-hero .eyebrow::before { background: var(--terra-lt); }
+.article-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.article-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250,247,243,0.45);
+  flex-wrap: wrap;
+}
+.article-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+.article-body-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem 6rem;
+}
+@media (max-width: 640px) { .article-body-wrap { padding: 2.5rem 1.5rem 4rem; } .article-hero { padding: 6rem 1.5rem 2.5rem; } .blog-hero { padding: 6rem 1.5rem 2.5rem; } }
+
+.article-lead {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--linen);
+}
+
+.article-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 2.8rem 0 1rem;
+  line-height: 1.2;
+}
+.article-body h2 em { font-style: italic; color: var(--terra); }
+.article-body h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin: 2rem 0 0.8rem;
+}
+.article-body p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-md);
+  margin-bottom: 1.4rem;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+.article-body ul, .article-body ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+.article-body li {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink-md);
+  margin-bottom: 0.5rem;
+}
+.article-body li::marker { color: var(--terra); }
+
+.article-highlight {
+  background: var(--white);
+  border-left: 3px solid var(--terra);
+  padding: 1.4rem 1.6rem;
+  margin: 2rem 0;
+}
+.article-highlight p { margin: 0; font-style: italic; color: var(--ink); font-size: 1.02rem; }
+
+.article-cta-box {
+  background: var(--ink);
+  padding: 2.5rem;
+  margin-top: 3.5rem;
+  text-align: center;
+}
+.article-cta-box p {
+  color: rgba(250,247,243,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+.article-cta-box .eyebrow { justify-content: center; color: var(--terra-lt); margin-bottom: 0.8rem; }
+.article-cta-box .eyebrow::before { display: none; }
+.article-cta-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.btn-terra {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--white);
+  padding: 0.85rem 2.2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.22s;
+}
+.btn-terra:hover { background: var(--terra-dk); }
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--linen);
+  padding-top: 2rem;
+  margin-top: 3rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.article-nav a {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.2s;
+}
+.article-nav a:hover { gap: 0.8rem; }
+.article-nav .back::before { content: '←'; }
+.article-nav .next::after { content: '→'; }
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="../../assets/images/Logo Main White.png" alt="Constroleum" class="nav-logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="../#servicios">Servicios</a></li>
+    <li><a href="../#proceso">Proceso</a></li>
+    <li><a href="../#nosotros">Nosotros</a></li>
+    <li><a href="./index.html" style='color:var(--terra)'>Blog</a></li>
+    <li><a href="../calculadora/">Calculadora</a></li>
+    <li><a href="../#contacto">Contacto</a></li>
+  </ul>
+  <a href="../#contacto" class="nav-cta-btn">Consulta gratuita</a>
+  <a href="../../" class="nav-lang-btn" aria-label="Idioma">🌐 Idioma</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <p class="eyebrow">Recursos · Budapest</p>
+    <h1>Blog de <em>construcción</em><br>e inversión en Budapest</h1>
+    <p class="hero-sub">Guías prácticas, precios reales y análisis del mercado inmobiliario húngaro para inversores y propietarios hispanohablantes.</p>
+  </div>
+</div>
+
+<div class="blog-grid-wrap">
+  <div class="blog-grid">
+    
+    <a href="rehabilitacion-edificios-budapest/index.html" class="blog-card">
+      <span class="blog-card-tag">Rehabilitación</span>
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Rehabilitación de edificios en Budapest: guía completa para propietarios e inversores" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Enero 2025 · 8 min de lectura</div>
+        <div class="blog-card-title">Rehabilitación de edificios en Budapest: guía completa para propietarios e inversores</div>
+        <div class="blog-card-excerpt">Todo lo que necesitas saber sobre los plazos, costes y requisitos legales de la rehabilitación integral en Hungría.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="comprar-piso-budapest-extranjero/index.html" class="blog-card">
+      <span class="blog-card-tag">Inversión</span>
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Comprar un piso en Budapest siendo extranjero: todo lo que debes saber antes de invertir" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Enero 2025 · 9 min de lectura</div>
+        <div class="blog-card-title">Comprar un piso en Budapest siendo extranjero: todo lo que debes saber antes de invertir</div>
+        <div class="blog-card-excerpt">Proceso de compra, impuestos, restricciones y estrategia post-adquisición para inversores no residentes en Hungría.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="reforma-integral-budapest-hispanohablantes/index.html" class="blog-card">
+      <span class="blog-card-tag">Para hispanohablantes</span>
+      <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Reforma integral en Budapest para hispanohablantes: ventajas, proceso y costes reales" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Febrero 2025 · 7 min de lectura</div>
+        <div class="blog-card-title">Reforma integral en Budapest para hispanohablantes: ventajas, proceso y costes reales</div>
+        <div class="blog-card-excerpt">Por qué cada vez más inversores de España y Latinoamérica eligen Budapest — y cómo gestionar una reforma desde la distancia.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="precio-reforma-budapest-2025/index.html" class="blog-card">
+      <span class="blog-card-tag">Precios</span>
+      <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=800&q=80" alt="¿Cuánto cuesta reformar un apartamento en Budapest en 2025? Precios reales por partida" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Febrero 2025 · 6 min de lectura</div>
+        <div class="blog-card-title">¿Cuánto cuesta reformar un apartamento en Budapest en 2025? Precios reales por partida</div>
+        <div class="blog-card-excerpt">Desglose real de precios por partida: demolición, instalaciones, revestimientos, cocina y baño. Sin letra pequeña.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="construccion-obra-nueva-budapest/index.html" class="blog-card">
+      <span class="blog-card-tag">Obra nueva</span>
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construcción de obra nueva en Budapest: licencias, plazos y gestión integral del proyecto" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Marzo 2025 · 8 min de lectura</div>
+        <div class="blog-card-title">Construcción de obra nueva en Budapest: licencias, plazos y gestión integral del proyecto</div>
+        <div class="blog-card-excerpt">Guía completa sobre el proceso de construcción desde cero en Hungría: normativa, permisos, costes y gestión integral.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="invertir-inmobiliario-budapest-guia/index.html" class="blog-card">
+      <span class="blog-card-tag">Inversión</span>
+      <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&q=80" alt="Guía completa para invertir en el mercado inmobiliario de Budapest en 2025" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Marzo 2025 · 10 min de lectura</div>
+        <div class="blog-card-title">Guía completa para invertir en el mercado inmobiliario de Budapest en 2025</div>
+        <div class="blog-card-excerpt">Análisis del mercado, distritos con mayor potencial, estrategias de rentabilización y errores más habituales.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="generalkivitelező-que-es/index.html" class="blog-card">
+      <span class="blog-card-tag">Guías</span>
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="¿Qué es un generálkivitelező? La figura del gestor integral de obras en Hungría" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Abril 2025 · 6 min de lectura</div>
+        <div class="blog-card-title">¿Qué es un generálkivitelező? La figura del gestor integral de obras en Hungría</div>
+        <div class="blog-card-excerpt">La figura del generálkivitelező —gestor integral de obra— es clave en la construcción húngara. Te explicamos qué hace, qué no hace, y por qué es indispensable.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="licencias-obra-budapest-guia/index.html" class="blog-card">
+      <span class="blog-card-tag">Guías</span>
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Licencias y permisos de obra en Budapest: guía práctica para propietarios extranjeros" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Abril 2025 · 7 min de lectura</div>
+        <div class="blog-card-title">Licencias y permisos de obra en Budapest: guía práctica para propietarios extranjeros</div>
+        <div class="blog-card-excerpt">Qué permisos necesitas, cuánto tardan, cuánto cuestan y cómo gestionarlos sin dominar el húngaro.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="distrito-judio-budapest-invertir/index.html" class="blog-card">
+      <span class="blog-card-tag">Distritos</span>
+      <img src="https://images.unsplash.com/photo-1541981000-aac95b5ef0e3?w=800&q=80" alt="Invertir en el Distrito Judío de Budapest (VII): oportunidades, riesgos y rentabilidad real" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Mayo 2025 · 7 min de lectura</div>
+        <div class="blog-card-title">Invertir en el Distrito Judío de Budapest (VII): oportunidades, riesgos y rentabilidad real</div>
+        <div class="blog-card-excerpt">El VII distrito es el más turístico y el más demandado para alquiler de corto plazo. Análisis honesto de sus ventajas, limitaciones y rentabilidad.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+
+    <a href="proceso-reforma-budapest-paso-a-paso/index.html" class="blog-card">
+      <span class="blog-card-tag">Guías</span>
+      <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=800&q=80" alt="Cómo funciona una reforma integral en Budapest: proceso completo paso a paso" class="blog-card-img" loading="lazy">
+      <div class="blog-card-body">
+        <div class="blog-card-meta">Mayo 2025 · 8 min de lectura</div>
+        <div class="blog-card-title">Cómo funciona una reforma integral en Budapest: proceso completo paso a paso</div>
+        <div class="blog-card-excerpt">Desde la primera visita hasta la entrega de llaves: todo lo que ocurre durante una reforma integral gestionada por Constroleum.</div>
+        <div class="blog-card-cta">Leer artículo</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="../../assets/images/logo-icon.png" alt="Constroleum" class="footer-logo">
+    <span class="footer-copy">© 2025 Constroleum · Todos los derechos reservados</span>
+    <address class="footer-addr">
+      Búza utca 2 · 1033 Budapest<br>
+      <a href="tel:+36308690578">+36 30 869 05 78</a>
+    </address>
+  </div>
+</footer>
+<script src="../../js/static.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('navbar');
+  if (nav) nav.classList.add('scrolled');
+});
+</script>
+</body>
+</html>

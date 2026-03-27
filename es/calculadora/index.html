@@ -883,19 +883,6 @@
 
         <div class="budget-divider"></div>
 
-        <div class="budget-subtotal">
-          <div class="budget-subtotal-label">Coste base</div>
-          <div class="budget-subtotal-value" id="costoBase">0 Ft</div>
-        </div>
-        <div class="budget-margin-row">
-          <div class="budget-margin-label">+ Gastos generales (20%)</div>
-          <div class="budget-margin-value" id="gastos">0 Ft</div>
-        </div>
-        <div class="budget-margin-row">
-          <div class="budget-margin-label">+ Beneficio empresa (25%)</div>
-          <div class="budget-margin-value" id="beneficio">0 Ft</div>
-        </div>
-
         <div class="budget-total-box">
           <div class="budget-total-label">Total estimado (sin IVA)</div>
           <div class="budget-total-value">
@@ -950,41 +937,42 @@
 <script src="../../js/static.js"></script>
 <script>
 const PRECIOS = {
+  // Precios unitarios ya incluyen gastos generales + beneficio (×1.50)
   obra: {
-    reform:   { base: 35000 },
-    integral: { base: 65000 },
-    new:      { base: 120000 },
+    reform:   { base: 52500 },
+    integral: { base: 97500 },
+    new:      { base: 180000 },
   },
   calidad: { econ: 0.7, med: 1.0, prem: 1.5, lux: 2.2 },
-  pavimento: { none: 0, lam: 6000, gres: 14000, parquet: 22000, marmol: 45000 },
+  pavimento: { none: 0, lam: 9000, gres: 21000, parquet: 33000, marmol: 67500 },
   items: {
-    derribo:         { label: '🔨 Derribo tabiques',        precio: 8000,   tipo: 'lineal' },
-    pavimento_ret:   { label: '🪵 Ret. pavimento',          precio: 2500,   tipo: 'm2' },
-    falso_techo_ret: { label: '⬛ Ret. falso techo',        precio: 3000,   tipo: 'm2' },
-    escombros:       { label: '🚛 Gestión escombros',       precio: 1500,   tipo: 'm2' },
-    electrica:       { label: '⚡ Instalación eléctrica',   precio: 12000,  tipo: 'm2' },
-    fontaneria:      { label: '🔧 Fontanería',              precio: 15000,  tipo: 'm2' },
-    calefaccion:     { label: '🔥 Calefacción',             precio: 18000,  tipo: 'm2' },
-    clima:           { label: '❄️ Climatización',           precio: 8000,   tipo: 'm2' },
-    gas:             { label: '🌡️ Gas / caldera',          precio: 350000, tipo: 'fijo' },
-    solar:           { label: '☀️ Solar / placas',          precio: 800000, tipo: 'fijo' },
-    pintura:         { label: '🖌️ Pintura paredes',         precio: 3500,   tipo: 'm2' },
-    azulejo:         { label: '🔲 Alicatado baño',          precio: 18000,  tipo: 'm2_bano' },
-    falso_techo:     { label: '🏗️ Falso techo',            precio: 8000,   tipo: 'm2' },
-    tabiqueria:      { label: '🧱 Tabiquería nueva',        precio: 12000,  tipo: 'lineal' },
-    aislamiento:     { label: '🧊 Aislamiento',             precio: 9000,   tipo: 'm2' },
-    ventanas:        { label: '🪟 Ventanas PVC',            precio: 80000,  tipo: 'por_hab' },
-    puertas:         { label: '🚪 Puertas int.',            precio: 55000,  tipo: 'por_hab' },
-    armarios:        { label: '🗄️ Armarios empotrados',    precio: 90000,  tipo: 'por_hab' },
-    escalera:        { label: '🪜 Escalera',                precio: 600000, tipo: 'fijo' },
-    terraza:         { label: '🌿 Terraza / balcón',        precio: 25000,  tipo: 'm2_25pct' },
-    sotano:          { label: '🏚️ Sótano / garaje',        precio: 35000,  tipo: 'm2_25pct' },
-    iluminacion:     { label: '💡 Iluminación design',      precio: 8000,   tipo: 'm2' },
+    derribo:         { label: '🔨 Derribo tabiques',        precio: 12000,  tipo: 'lineal' },
+    pavimento_ret:   { label: '🪵 Ret. pavimento',          precio: 3750,   tipo: 'm2' },
+    falso_techo_ret: { label: '⬛ Ret. falso techo',        precio: 4500,   tipo: 'm2' },
+    escombros:       { label: '🚛 Gestión escombros',       precio: 2250,   tipo: 'm2' },
+    electrica:       { label: '⚡ Instalación eléctrica',   precio: 18000,  tipo: 'm2' },
+    fontaneria:      { label: '🔧 Fontanería',              precio: 22500,  tipo: 'm2' },
+    calefaccion:     { label: '🔥 Calefacción',             precio: 27000,  tipo: 'm2' },
+    clima:           { label: '❄️ Climatización',           precio: 12000,  tipo: 'm2' },
+    gas:             { label: '🌡️ Gas / caldera',          precio: 525000, tipo: 'fijo' },
+    solar:           { label: '☀️ Solar / placas',          precio: 1200000,tipo: 'fijo' },
+    pintura:         { label: '🖌️ Pintura paredes',         precio: 5250,   tipo: 'm2' },
+    azulejo:         { label: '🔲 Alicatado baño',          precio: 27000,  tipo: 'm2_bano' },
+    falso_techo:     { label: '🏗️ Falso techo',            precio: 12000,  tipo: 'm2' },
+    tabiqueria:      { label: '🧱 Tabiquería nueva',        precio: 18000,  tipo: 'lineal' },
+    aislamiento:     { label: '🧊 Aislamiento',             precio: 13500,  tipo: 'm2' },
+    ventanas:        { label: '🪟 Ventanas PVC',            precio: 120000, tipo: 'por_hab' },
+    puertas:         { label: '🚪 Puertas int.',            precio: 82500,  tipo: 'por_hab' },
+    armarios:        { label: '🗄️ Armarios empotrados',    precio: 135000, tipo: 'por_hab' },
+    escalera:        { label: '🪜 Escalera',                precio: 900000, tipo: 'fijo' },
+    terraza:         { label: '🌿 Terraza / balcón',        precio: 37500,  tipo: 'm2_25pct' },
+    sotano:          { label: '🏚️ Sótano / garaje',        precio: 52500,  tipo: 'm2_25pct' },
+    iluminacion:     { label: '💡 Iluminación design',      precio: 12000,  tipo: 'm2' },
   },
-  cocina: { none: 0, basic: 300000, med: 900000, prem: 1800000 },
-  bano:   { none: 0, basic: 180000, med: 450000, prem: 900000 },
-  extras: { banera: 120000, ducha: 80000, inodoro: 45000, lavabo: 65000, espejo: 30000, toallero: 25000 },
-  gastos: 0.20, beneficio: 0.25, iva: 0.27,
+  cocina: { none: 0, basic: 450000, med: 1350000, prem: 2700000 },
+  bano:   { none: 0, basic: 270000, med: 675000,  prem: 1350000 },
+  extras: { banera: 180000, ducha: 120000, inodoro: 67500, lavabo: 97500, espejo: 45000, toallero: 37500 },
+  iva: 0.27,
 };
 
 let activeItems  = { pintura: true };
@@ -1092,11 +1080,8 @@ function calcular() {
     total += v;
   });
 
-  const gastos    = total * PRECIOS.gastos;
-  const beneficio = total * PRECIOS.beneficio;
-  const subtotal  = total + gastos + beneficio;
-  const iva       = subtotal * PRECIOS.iva;
-  const conIva    = subtotal + iva;
+  const iva       = total * PRECIOS.iva;
+  const conIva    = total + iva;
   const sym       = currentCurrency === 'EUR' ? '€' : 'Ft';
 
   const container = document.getElementById('lineItems');
@@ -1105,13 +1090,11 @@ function calcular() {
     : lines.map(l => `<div class="budget-line"><div class="budget-line-label">${l.label}</div><div class="budget-line-value">${fmt(l.value)}</div></div>`).join('');
 
   document.getElementById('costoBase').textContent  = disp(total) + ' ' + sym;
-  document.getElementById('gastos').textContent     = disp(gastos) + ' ' + sym;
-  document.getElementById('beneficio').textContent  = disp(beneficio) + ' ' + sym;
-  document.getElementById('totalValue').textContent = disp(subtotal);
+  document.getElementById('totalValue').textContent = disp(total);
   document.getElementById('currencySymbol').textContent = currentCurrency === 'EUR' ? '€ ' : '';
   document.getElementById('ivaValue').textContent   = disp(iva) + ' ' + sym;
   document.getElementById('totalConIva').textContent = disp(conIva) + ' ' + sym;
-  document.getElementById('totalNote').textContent  = '≈ ' + disp(subtotal / m2) + ' ' + sym + '/m² · ' + m2 + ' m²';
+  document.getElementById('totalNote').textContent  = '≈ ' + disp(total / m2) + ' ' + sym + '/m² · ' + m2 + ' m²';
 }
 
 function solicitarPresupuesto() {

@@ -883,19 +883,6 @@
 
         <div class="budget-divider"></div>
 
-        <div class="budget-subtotal">
-          <div class="budget-subtotal-label">Alapköltség</div>
-          <div class="budget-subtotal-value" id="costoBase">0 Ft</div>
-        </div>
-        <div class="budget-margin-row">
-          <div class="budget-margin-label">+ Általános költségek (20%)</div>
-          <div class="budget-margin-value" id="gastos">0 Ft</div>
-        </div>
-        <div class="budget-margin-row">
-          <div class="budget-margin-label">+ Vállalkozói haszon (25%)</div>
-          <div class="budget-margin-value" id="beneficio">0 Ft</div>
-        </div>
-
         <div class="budget-total-box">
           <div class="budget-total-label">Becsült összeg (ÁFA nélkül)</div>
           <div class="budget-total-value">
@@ -950,41 +937,42 @@
 <script src="../../js/static.js"></script>
 <script>
 const PRECIOS = {
+  // Unit prices already include overheads + profit (×1.50)
   obra: {
-    reform:   { base: 35000 },
-    integral: { base: 65000 },
-    new:      { base: 120000 },
+    reform:   { base: 52500 },
+    integral: { base: 97500 },
+    new:      { base: 180000 },
   },
   calidad: { econ: 0.7, med: 1.0, prem: 1.5, lux: 2.2 },
-  pavimento: { none: 0, lam: 6000, gres: 14000, parquet: 22000, marmol: 45000 },
+  pavimento: { none: 0, lam: 9000, gres: 21000, parquet: 33000, marmol: 67500 },
   items: {
-    derribo:         { label: '🔨 Válaszfal bontás',        precio: 8000,   tipo: 'lineal' },
-    pavimento_ret:   { label: '🪵 Burkolat bontás',          precio: 2500,   tipo: 'm2' },
-    falso_techo_ret: { label: '⬛ Álmennyezet bontás',        precio: 3000,   tipo: 'm2' },
-    escombros:       { label: '🚛 Törmelék kezelés',       precio: 1500,   tipo: 'm2' },
-    electrica:       { label: '⚡ Villanyszerelés',   precio: 12000,  tipo: 'm2' },
-    fontaneria:      { label: '🔧 Vízvezeték',              precio: 15000,  tipo: 'm2' },
+    derribo:         { label: '🔨 Válaszfal bontás',        precio: 18000,  tipo: 'lineal' },
+    pavimento_ret:   { label: '🪵 Burkolat bontás',          precio: 3750,   tipo: 'm2' },
+    falso_techo_ret: { label: '⬛ Álmennyezet bontás',        precio: 4500,   tipo: 'm2' },
+    escombros:       { label: '🚛 Törmelék kezelés',       precio: 2250,   tipo: 'm2' },
+    electrica:       { label: '⚡ Villanyszerelés',   precio: 27000,  tipo: 'm2' },
+    fontaneria:      { label: '🔧 Vízvezeték',              precio: 22500,  tipo: 'm2' },
     calefaccion:     { label: '🔥 Fűtés',             precio: 18000,  tipo: 'm2' },
-    clima:           { label: '❄️ Klíma',           precio: 8000,   tipo: 'm2' },
-    gas:             { label: '🌡️ Gáz / kazán',          precio: 350000, tipo: 'fijo' },
-    solar:           { label: '☀️ Napelem',          precio: 800000, tipo: 'fijo' },
-    pintura:         { label: '🖌️ Falak festése',         precio: 3500,   tipo: 'm2' },
-    azulejo:         { label: '🔲 Fürdőszoba csempe',          precio: 18000,  tipo: 'm2_bano' },
+    clima:           { label: '❄️ Klíma',           precio: 12000,  tipo: 'm2' },
+    gas:             { label: '🌡️ Gáz / kazán',          precio: 525000, tipo: 'fijo' },
+    solar:           { label: '☀️ Napelem',          precio: 1200000,tipo: 'fijo' },
+    pintura:         { label: '🖌️ Falak festése',         precio: 5250,   tipo: 'm2' },
+    azulejo:         { label: '🔲 Fürdőszoba csempe',          precio: 27000,  tipo: 'm2_bano' },
     falso_techo:     { label: '🏗️ Álmennyezet',            precio: 8000,   tipo: 'm2' },
     tabiqueria:      { label: '🧱 Új válaszfalak',        precio: 12000,  tipo: 'lineal' },
-    aislamiento:     { label: '🧊 Szigetelés',             precio: 9000,   tipo: 'm2' },
-    ventanas:        { label: '🪟 PVC ablakok',            precio: 80000,  tipo: 'por_hab' },
-    puertas:         { label: '🚪 Beltéri ajtók',            precio: 55000,  tipo: 'por_hab' },
-    armarios:        { label: '🗄️ Beépített szekrényekdos',    precio: 90000,  tipo: 'por_hab' },
-    escalera:        { label: '🪜 Escalera',                precio: 600000, tipo: 'fijo' },
-    terraza:         { label: '🌿 Terasz / erkély',        precio: 25000,  tipo: 'm2_25pct' },
-    sotano:          { label: '🏚️ Pince / garázs',        precio: 35000,  tipo: 'm2_25pct' },
+    aislamiento:     { label: '🧊 Szigetelés',             precio: 13500,  tipo: 'm2' },
+    ventanas:        { label: '🪟 PVC ablakok',            precio: 120000, tipo: 'por_hab' },
+    puertas:         { label: '🚪 Beltéri ajtók',            precio: 82500,  tipo: 'por_hab' },
+    armarios:        { label: '🗄️ Beépített szekrényekdos',    precio: 135000, tipo: 'por_hab' },
+    escalera:        { label: '🪜 Escalera',                precio: 900000, tipo: 'fijo' },
+    terraza:         { label: '🌿 Terasz / erkély',        precio: 37500,  tipo: 'm2_25pct' },
+    sotano:          { label: '🏚️ Pince / garázs',        precio: 52500,  tipo: 'm2_25pct' },
     iluminacion:     { label: '💡 Design világítás',      precio: 8000,   tipo: 'm2' },
   },
-  cocina: { none: 0, basic: 300000, med: 900000, prem: 1800000 },
-  bano:   { none: 0, basic: 180000, med: 450000, prem: 900000 },
-  extras: { banera: 120000, ducha: 80000, inodoro: 45000, lavabo: 65000, espejo: 30000, toallero: 25000 },
-  gastos: 0.20, beneficio: 0.25, iva: 0.27,
+  cocina: { none: 0, basic: 450000, med: 1350000, prem: 2700000 },
+  bano:   { none: 0, basic: 270000, med: 675000,  prem: 1350000 },
+  extras: { banera: 180000, ducha: 120000, inodoro: 67500, lavabo: 97500, espejo: 45000, toallero: 37500 },
+  iva: 0.27,
 };
 
 let activeItems  = { pintura: true };
@@ -1092,11 +1080,8 @@ function calcular() {
     total += v;
   });
 
-  const gastos    = total * PRECIOS.gastos;
-  const beneficio = total * PRECIOS.beneficio;
-  const subtotal  = total + gastos + beneficio;
-  const iva       = subtotal * PRECIOS.iva;
-  const conIva    = subtotal + iva;
+  const iva       = total * PRECIOS.iva;
+  const conIva    = total + iva;
   const sym       = currentCurrency === 'EUR' ? '€' : 'Ft';
 
   const container = document.getElementById('lineItems');
@@ -1105,13 +1090,11 @@ function calcular() {
     : lines.map(l => `<div class="budget-line"><div class="budget-line-label">${l.label}</div><div class="budget-line-value">${fmt(l.value)}</div></div>`).join('');
 
   document.getElementById('costoBase').textContent  = disp(total) + ' ' + sym;
-  document.getElementById('gastos').textContent     = disp(gastos) + ' ' + sym;
-  document.getElementById('beneficio').textContent  = disp(beneficio) + ' ' + sym;
-  document.getElementById('totalValue').textContent = disp(subtotal);
+  document.getElementById('totalValue').textContent = disp(total);
   document.getElementById('currencySymbol').textContent = currentCurrency === 'EUR' ? '€ ' : '';
   document.getElementById('ivaValue').textContent   = disp(iva) + ' ' + sym;
   document.getElementById('totalConIva').textContent = disp(conIva) + ' ' + sym;
-  document.getElementById('totalNote').textContent  = '≈ ' + disp(subtotal / m2) + ' ' + sym + '/m² · ' + m2 + ' m²';
+  document.getElementById('totalNote').textContent  = '≈ ' + disp(total / m2) + ' ' + sym + '/m² · ' + m2 + ' m²';
 }
 
 function solicitarPresupuesto() {

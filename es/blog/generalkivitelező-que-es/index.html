@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Qué es un generálkivitelező? La figura del gestor integral de obras en Hungría — Constroleum</title>
+  <meta name="description" content="La figura del generálkivitelező —gestor integral de obra— es clave en la construcción húngara. Te explicamos qué hace, qué no hace, y por qué es indispensable.">
+  <meta name="keywords" content="generálkivitelező qué es, gestor integral obras Budapest, general contractor Budapest español">
+  <link rel="canonical" href="https://www.constroleum.hu/es/blog/generalkivitelező-que-es/">
+  <link rel="icon" type="image/png" href="../../../assets/images/Favicon Purple.png">
+  <link rel="apple-touch-icon" href="../../../assets/images/Favicon Purple.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+<style>
+body { overflow-x: hidden; background: var(--bone); }
+
+/* ── Blog hero ── */
+.blog-hero {
+  padding: 7rem 3rem 3.5rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.blog-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.blog-hero .eyebrow { color: var(--terra-lt); }
+.blog-hero .eyebrow::before { background: var(--terra-lt); }
+.blog-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.blog-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.blog-hero .hero-sub {
+  color: rgba(250,247,243,0.55);
+  font-size: 0.88rem;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+/* ── Blog index grid ── */
+.blog-grid-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 3rem 6rem;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } .blog-grid-wrap { padding: 2.5rem 1.5rem 4rem; } }
+
+.blog-card {
+  background: var(--white);
+  border: 1px solid var(--linen);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(42,33,24,0.10);
+  border-color: var(--terra-lt);
+}
+.blog-card-tag {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--terra);
+  color: var(--white);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  font-weight: 500;
+}
+.blog-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) brightness(0.92);
+  transition: filter 0.3s;
+}
+.blog-card:hover .blog-card-img { filter: saturate(1) brightness(1); }
+.blog-card-body { padding: 1.4rem 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+.blog-card-meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  margin-bottom: 0.7rem;
+}
+.blog-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+.blog-card-excerpt {
+  font-size: 0.8rem;
+  color: var(--ink-md);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.blog-card-cta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-card-cta::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+.blog-card:hover .blog-card-cta::after { transform: translateX(4px); }
+
+/* ── Article page ── */
+.article-hero {
+  padding: 7rem 3rem 3rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.article-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terra) 0%, var(--clay) 60%, transparent 100%);
+}
+.article-hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
+.article-hero .eyebrow { color: var(--terra-lt); }
+.article-hero .eyebrow::before { background: var(--terra-lt); }
+.article-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.article-hero h1 em { font-style: italic; color: var(--terra-lt); }
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250,247,243,0.45);
+  flex-wrap: wrap;
+}
+.article-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+.article-body-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem 6rem;
+}
+@media (max-width: 640px) { .article-body-wrap { padding: 2.5rem 1.5rem 4rem; } .article-hero { padding: 6rem 1.5rem 2.5rem; } .blog-hero { padding: 6rem 1.5rem 2.5rem; } }
+
+.article-lead {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--linen);
+}
+
+.article-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 2.8rem 0 1rem;
+  line-height: 1.2;
+}
+.article-body h2 em { font-style: italic; color: var(--terra); }
+.article-body h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin: 2rem 0 0.8rem;
+}
+.article-body p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-md);
+  margin-bottom: 1.4rem;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+.article-body ul, .article-body ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+.article-body li {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink-md);
+  margin-bottom: 0.5rem;
+}
+.article-body li::marker { color: var(--terra); }
+
+.article-highlight {
+  background: var(--white);
+  border-left: 3px solid var(--terra);
+  padding: 1.4rem 1.6rem;
+  margin: 2rem 0;
+}
+.article-highlight p { margin: 0; font-style: italic; color: var(--ink); font-size: 1.02rem; }
+
+.article-cta-box {
+  background: var(--ink);
+  padding: 2.5rem;
+  margin-top: 3.5rem;
+  text-align: center;
+}
+.article-cta-box p {
+  color: rgba(250,247,243,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+.article-cta-box .eyebrow { justify-content: center; color: var(--terra-lt); margin-bottom: 0.8rem; }
+.article-cta-box .eyebrow::before { display: none; }
+.article-cta-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.btn-terra {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--white);
+  padding: 0.85rem 2.2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.22s;
+}
+.btn-terra:hover { background: var(--terra-dk); }
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--linen);
+  padding-top: 2rem;
+  margin-top: 3rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.article-nav a {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.2s;
+}
+.article-nav a:hover { gap: 0.8rem; }
+.article-nav .back::before { content: '←'; }
+.article-nav .next::after { content: '→'; }
+</style>
+  <style>
+    /* Article nav overrides for deeper path */
+    .article-hero, .article-body-wrap { max-width-inner: 780px; }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="../../../assets/images/Logo Main White.png" alt="Constroleum" class="nav-logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="../../#servicios">Servicios</a></li>
+    <li><a href="../../#proceso">Proceso</a></li>
+    <li><a href="../../#nosotros">Nosotros</a></li>
+    <li><a href="../index.html" style="color:var(--terra)">Blog</a></li>
+    <li><a href="../../calculadora/">Calculadora</a></li>
+    <li><a href="../../#contacto">Contacto</a></li>
+  </ul>
+  <a href="../../#contacto" class="nav-cta-btn">Consulta gratuita</a>
+  <a href="../../../" class="nav-lang-btn" aria-label="Idioma">🌐 Idioma</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <p class="eyebrow">Guías · Abril 2025</p>
+    <h1>¿Qué es un <em>generálkivitelező</em>?</h1>
+    <div class="article-meta">
+      <span>📅 Abril 2025</span>
+      <span>⏱ 6 min de lectura</span>
+      <span>📍 Budapest, Hungría</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body-wrap">
+  <p class="article-lead">Si has comenzado a investigar el mercado de la construcción en Hungría, habrás encontrado el término <em>generálkivitelező</em> en prácticamente todos los contratos y presupuestos. Esta figura no tiene un equivalente exacto en los sistemas de construcción españoles o latinoamericanos, aunque se acerca mucho al concepto de "empresa constructora general" o "contratista general".</p>
+  <div class="article-body">
+
+<h2>Definición: <em>qué hace un generálkivitelező</em></h2>
+<p>El <em>generálkivitelező</em> —literalmente, «contratista general»— es la empresa o profesional que asume la responsabilidad total de la ejecución de una obra frente al cliente. Esto incluye:</p>
+<ul>
+  <li>Firmar un único contrato con el cliente que cubre todos los trabajos</li>
+  <li>Contratar y coordinar a todos los subcontratistas especializados</li>
+  <li>Gestionar el aprovisionamiento de materiales</li>
+  <li>Supervisar la ejecución diaria en obra</li>
+  <li>Responder contractualmente ante los plazos, el presupuesto y la calidad</li>
+  <li>Gestionar los trámites administrativos necesarios durante la obra</li>
+  <li>Emitir la documentación de fin de obra y tramitar la cédula de habitabilidad</li>
+</ul>
+
+<h2>¿En qué se diferencia del <em>arquitecto director de obra</em>?</h2>
+<p>En Hungría, como en muchos países, el arquitecto que firma el proyecto es responsable del diseño y, en su caso, de la dirección facultativa de la obra. Pero no es responsable de la ejecución ni de la coordinación de los subcontratistas. El <em>generálkivitelező</em> es quien ejecuta físicamente la obra. Son roles complementarios, no intercambiables.</p>
+
+<div class="article-highlight"><p>"Con un generálkivitelező, el cliente tiene un único interlocutor para toda la obra. No necesita conocer al electricista, al fontanero ni al alicatador por separado — ni gestionar sus pagos ni resolver sus conflictos de agenda."</p></div>
+
+<h2>¿Por qué es especialmente valioso <em>para inversores extranjeros</em>?</h2>
+<p>Un inversor extranjero que quiere reformar un apartamento en Budapest se enfrenta a varios retos simultáneos: la barrera del idioma, el desconocimiento del mercado local de subcontratistas, la dificultad para supervisar la obra a distancia y el riesgo de sobreprecios o calidades inferiores a las acordadas.</p>
+<p>El <em>generálkivitelező</em> resuelve todos estos problemas de un golpe. Como responsable contractual único, tiene todo el incentivo para que la obra salga bien: su reputación y su liquidación económica dependen de ello. Si un subcontratista falla, es su problema — no el del cliente.</p>
+
+<h2>¿Cuánto cobra <em>un generálkivitelező</em>?</h2>
+<p>En el mercado húngaro, el margen del contratista general suele estar ya incorporado en los precios unitarios de la oferta. No es habitual que se cobre por separado como «honorarios de gestión». Lo que sí es habitual —y completamente transparente— es que el precio del <em>generálkivitelező</em> sea superior al coste de contratar directamente a cada subcontratista, porque incluye la coordinación, la garantía, el riesgo y la gestión administrativa.</p>
+<p>En Constroleum, todos nuestros precios incluyen este margen. No hay costes ocultos ni «sorpresas» al final. El presupuesto firmado es el precio final — salvo modificaciones expresamente acordadas por escrito con el cliente.</p>
+
+<h2>Cómo elegir <em>un buen generálkivitelező</em></h2>
+<ul>
+  <li>Verifica que está inscrito en el Registro de Empresas Húngaro y tiene seguro de responsabilidad civil de obra</li>
+  <li>Pide referencias de obras anteriores similares a la tuya</li>
+  <li>Exige un presupuesto detallado por partidas, no un precio global</li>
+  <li>Asegúrate de que el contrato incluye cláusulas de garantía y penalizaciones por retraso</li>
+  <li>Comprueba que dispone de equipo propio y no subcontrata el 100% de los trabajos</li>
+</ul>
+
+  </div>
+
+  <div class="article-cta-box">
+    <p class="eyebrow">¿Tienes un proyecto en Budapest?</p>
+    <h3>Cuéntanos tu proyecto.<br>La primera consulta es gratuita.</h3>
+    <p>Respondemos en menos de 24h en días laborables. Hablamos español.</p>
+    <a href="../../#contacto" class="btn-terra">Hablar con nosotros</a>
+  </div>
+
+  <div class="article-nav">
+    <a href="../invertir-inmobiliario-budapest-guia/index.html" class="back">Guía completa para invertir en el mercado inmobili…</a>
+    <a href="../index.html" style="color:var(--ink-lt);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;">Ver todos</a>
+    <a href="../licencias-obra-budapest-guia/index.html" class="next">Licencias y permisos de obra en Budapest: guía prá…</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="../../../assets/images/logo-icon.png" alt="Constroleum" class="footer-logo">
+    <span class="footer-copy">© 2025 Constroleum · Todos los derechos reservados</span>
+    <address class="footer-addr">
+      Búza utca 2 · 1033 Budapest<br>
+      <a href="tel:+36308690578">+36 30 869 05 78</a>
+    </address>
+  </div>
+</footer>
+<script src="../../../js/static.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('navbar');
+  if (nav) nav.classList.add('scrolled');
+});
+</script>
+</body>
+</html>
