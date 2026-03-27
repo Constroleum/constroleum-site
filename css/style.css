@@ -70,13 +70,25 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--ink-md);
-  border: 1px solid var(--linen);
-  padding: 0.45rem 0.9rem;
-  transition: color 0.2s, border-color 0.2s;
+  color: rgba(250,247,243,0.9);
+  border: 1px solid rgba(250,247,243,0.4);
+  padding: 0.45rem 1rem;
+  border-radius: 2px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
   white-space: nowrap;
+  background: rgba(250,247,243,0.08);
 }
-.nav-lang-btn:hover { color: var(--terra); border-color: var(--terra); }
+.nav-lang-btn:hover {
+  color: var(--white);
+  border-color: var(--terra-lt);
+  background: rgba(180,90,50,0.18);
+}
+nav.scrolled .nav-lang-btn {
+  color: var(--ink-md);
+  border-color: var(--linen);
+  background: transparent;
+}
+nav.scrolled .nav-lang-btn:hover { color: var(--terra); border-color: var(--terra); }
 
 /* ─── NAV ─── */
 nav {
@@ -114,10 +126,13 @@ nav.scrolled {
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-md);
+  color: rgba(250,247,243,0.82);
   text-decoration: none;
   transition: color 0.2s;
   position: relative;
+}
+nav.scrolled .nav-links a {
+  color: var(--ink-md);
 }
 
 .nav-links a::after {
